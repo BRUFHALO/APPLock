@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-merged_res-20:\\drawable_button_lock.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-main-22:\\drawable\\button_lock.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-merged_res-20:\\drawable_button_voice.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-main-22:\\drawable\\button_voice.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-merged_res-20:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-main-22:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-merged_res-20:\\drawable_button_enable.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-main-22:\\drawable\\button_enable.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-merged_res-20:\\xml_device_admin.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-main-22:\\xml\\device_admin.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-merged_res-20:\\drawable_status_background.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-main-22:\\drawable\\status_background.xml"
+    },
+    {
+        "merged": "com.noveasmibeta.app-merged_res-20:/layout_activity_main.xml.flat",
+        "source": "com.noveasmibeta.app-main-22:/layout/activity_main.xml"
+    }
+]

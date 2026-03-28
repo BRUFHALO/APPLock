@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.noveasmibeta.app-mergeDebugResources-18:/values-hu/values-hu.xml",
+            "outputFile": "com.noveasmibeta.app-mergeDebugResources-20:/values-hu/values-hu.xml",
             "map": [
                 {
                     "source": "C:\\Users\\PC\\.gradle\\caches\\9.0-milestone-1\\transforms\\4428070d35b5908e2590b1f7977b0c86\\transformed\\core-1.9.0\\res\\values-hu\\values-hu.xml",

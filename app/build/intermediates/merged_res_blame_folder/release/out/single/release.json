@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "com.noveasmibeta.app-merged_res-21:/drawable_status_background.xml.flat",
+        "source": "com.noveasmibeta.app-main-22:/drawable/status_background.xml"
+    },
+    {
+        "merged": "com.noveasmibeta.app-merged_res-21:/layout_activity_main.xml.flat",
+        "source": "com.noveasmibeta.app-main-22:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.noveasmibeta.app-merged_res-21:/drawable_button_enable.xml.flat",
+        "source": "com.noveasmibeta.app-main-22:/drawable/button_enable.xml"
+    },
+    {
+        "merged": "com.noveasmibeta.app-merged_res-21:/drawable_button_lock.xml.flat",
+        "source": "com.noveasmibeta.app-main-22:/drawable/button_lock.xml"
+    },
+    {
+        "merged": "com.noveasmibeta.app-merged_res-21:/drawable_button_voice.xml.flat",
+        "source": "com.noveasmibeta.app-main-22:/drawable/button_voice.xml"
+    },
+    {
+        "merged": "com.noveasmibeta.app-merged_res-21:/xml_device_admin.xml.flat",
+        "source": "com.noveasmibeta.app-main-22:/xml/device_admin.xml"
+    }
+]

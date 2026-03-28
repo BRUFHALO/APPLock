@@ -4,6 +4,14 @@ drawable button_enable
 drawable button_lock
 drawable button_voice
 drawable status_background
+id bcvCacheIndicator
+id bcvCard
+id bcvDolarPrice
+id bcvEuroPrice
+id bcvFechaValor
+id bcvLastUpdate
+id bcvRefreshButton
+id bcvVigencia
 id enableAdminButton
 id lockButton
 id statusText

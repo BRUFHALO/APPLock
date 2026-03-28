@@ -8,10 +8,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
@@ -27,6 +30,17 @@ public class MainActivity extends Activity {
     private Button enableAdminButton;
     private Button voiceButton;
 
+    // BCV UI
+    private TextView bcvDolarPrice;
+    private TextView bcvEuroPrice;
+    private TextView bcvFechaValor;
+    private TextView bcvLastUpdate;
+    private TextView bcvVigencia;
+    private TextView bcvCacheIndicator;
+    private Button bcvRefreshButton;
+    private BcvScraper bcvScraper;
+    private Handler mainHandler;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +55,18 @@ public class MainActivity extends Activity {
         lockButton = findViewById(R.id.lockButton);
         enableAdminButton = findViewById(R.id.enableAdminButton);
         voiceButton = findViewById(R.id.voiceButton);
+
+        // BCV UI References
+        bcvDolarPrice = findViewById(R.id.bcvDolarPrice);
+        bcvEuroPrice = findViewById(R.id.bcvEuroPrice);
+        bcvFechaValor = findViewById(R.id.bcvFechaValor);
+        bcvLastUpdate = findViewById(R.id.bcvLastUpdate);
+        bcvVigencia = findViewById(R.id.bcvVigencia);
+        bcvCacheIndicator = findViewById(R.id.bcvCacheIndicator);
+        bcvRefreshButton = findViewById(R.id.bcvRefreshButton);
+
+        mainHandler = new Handler(Looper.getMainLooper());
+        bcvScraper = new BcvScraper(this);
 
         // Configurar botones
         lockButton.setOnClickListener(new View.OnClickListener() {
@@ -64,7 +90,17 @@ public class MainActivity extends Activity {
             }
         });
 
+        bcvRefreshButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fetchBcvData();
+            }
+        });
+
         updateUI();
+
+        // Cargar tasas BCV al iniciar
+        fetchBcvData();
     }
 
     @Override
@@ -75,7 +111,7 @@ public class MainActivity extends Activity {
 
     private void updateUI() {
         boolean isAdmin = devicePolicyManager.isAdminActive(adminComponent);
-        boolean serviceRunning = isServiceRunning(VoiceListenerService.class);
+        boolean serviceRunning = isServiceRunning(VoskVoiceService.class);
         
         if (isAdmin) {
             if (serviceRunning) {
@@ -112,7 +148,8 @@ public class MainActivity extends Activity {
     }
 
     private void toggleVoiceService() {
-        if (isServiceRunning(VoiceListenerService.class)) {
+        boolean serviceRunning = isServiceRunning(VoskVoiceService.class);
+        if (serviceRunning) {
             stopVoiceService();
         } else {
             if (checkMicrophonePermission()) {
@@ -125,44 +162,19 @@ public class MainActivity extends Activity {
 
     private void startVoiceService() {
         try {
-            Intent serviceIntent = new Intent(this, VoiceListenerService.class);
+            Intent serviceIntent = new Intent(this, VoskVoiceService.class);
             startService(serviceIntent);
             Toast.makeText(this, "🎤 Escucha continua activada", Toast.LENGTH_SHORT).show();
             updateUI();
             
-            // Iniciar tarea periódica para mantener el servicio activo
-            startServiceKeeper();
         } catch (Exception e) {
             Toast.makeText(this, "Error: " + e.getMessage(), Toast.LENGTH_LONG).show();
             android.util.Log.e("MainActivity", "Error al iniciar servicio: " + e.getMessage());
         }
     }
-    
-    private void startServiceKeeper() {
-        // Tarea periódica para verificar y reiniciar el servicio si es necesario
-        final android.os.Handler handler = new android.os.Handler();
-        final Runnable runnable = new Runnable() {
-            @Override
-            public void run() {
-                if (!isServiceRunning(VoiceListenerService.class)) {
-                    try {
-                        Intent serviceIntent = new Intent(MainActivity.this, VoiceListenerService.class);
-                        startService(serviceIntent);
-                        android.util.Log.d("MainActivity", "Servicio reiniciado automáticamente");
-                    } catch (Exception e) {
-                        android.util.Log.e("MainActivity", "Error al reiniciar servicio: " + e.getMessage());
-                    }
-                }
-                // Repetir cada 30 segundos
-                handler.postDelayed(this, 30000);
-            }
-        };
-        // Iniciar después de 30 segundos
-        handler.postDelayed(runnable, 30000);
-    }
 
     private void stopVoiceService() {
-        Intent serviceIntent = new Intent(this, VoiceListenerService.class);
+        Intent serviceIntent = new Intent(this, VoskVoiceService.class);
         stopService(serviceIntent);
         Toast.makeText(this, "Escucha detenida", Toast.LENGTH_SHORT).show();
         updateUI();
@@ -219,5 +231,91 @@ public class MainActivity extends Activity {
         ActivityCompat.requestPermissions(this, 
                 new String[]{Manifest.permission.RECORD_AUDIO}, 
                 REQUEST_CODE_RECORD_AUDIO);
+    }
+
+    // ========== BCV Scraper ==========
+
+    private void fetchBcvData() {
+        bcvRefreshButton.setEnabled(false);
+        bcvDolarPrice.setText("...");
+        bcvEuroPrice.setText("...");
+
+        bcvScraper.obtenerTasas(new BcvScraper.BcvCallback() {
+            @Override
+            public void onSuccess(BcvScraper.BcvData data) {
+                mainHandler.post(() -> updateBcvUI(data));
+            }
+
+            @Override
+            public void onError(String error, BcvScraper.BcvData cachedData) {
+                mainHandler.post(() -> {
+                    if (cachedData != null) {
+                        updateBcvUI(cachedData);
+                        Toast.makeText(MainActivity.this, error + " (mostrando caché)", Toast.LENGTH_SHORT).show();
+                    } else {
+                        bcvDolarPrice.setText("---");
+                        bcvDolarPrice.setTextColor(0xFFFF5252);
+                        bcvEuroPrice.setText("---");
+                        bcvEuroPrice.setTextColor(0xFFFF5252);
+                        bcvFechaValor.setText("📅 " + error);
+                        bcvLastUpdate.setText("");
+                        Toast.makeText(MainActivity.this, error, Toast.LENGTH_LONG).show();
+                    }
+                    bcvRefreshButton.setEnabled(true);
+                });
+            }
+        });
+    }
+
+    private void updateBcvUI(BcvScraper.BcvData data) {
+        // Dólar
+        if (data.dolar > 0) {
+            bcvDolarPrice.setText(data.dolarStr);
+            bcvDolarPrice.setTextColor(0xFF4CAF50);
+        } else {
+            bcvDolarPrice.setText("N/A");
+            bcvDolarPrice.setTextColor(0xFFFF5252);
+        }
+
+        // Euro
+        if (data.euro > 0) {
+            bcvEuroPrice.setText(data.euroStr);
+            bcvEuroPrice.setTextColor(0xFF2196F3);
+        } else {
+            bcvEuroPrice.setText("N/A");
+            bcvEuroPrice.setTextColor(0xFFFF5252);
+        }
+
+        // Fecha valor
+        bcvFechaValor.setText("📅 Fecha valor: " + data.fechaValor);
+
+        // Última consulta
+        bcvLastUpdate.setText("🕓 Última consulta: " + data.lastUpdate);
+
+        // Indicador de caché
+        if (data.isCache) {
+            bcvCacheIndicator.setText("📦 Dato en caché");
+            bcvCacheIndicator.setVisibility(View.VISIBLE);
+        } else {
+            bcvCacheIndicator.setVisibility(View.GONE);
+        }
+
+        // Vigencia
+        if (data.vigenciaMsg != null && !data.vigenciaMsg.isEmpty()) {
+            bcvVigencia.setText(data.vigenciaMsg);
+            bcvVigencia.setVisibility(View.VISIBLE);
+        } else {
+            bcvVigencia.setVisibility(View.GONE);
+        }
+
+        bcvRefreshButton.setEnabled(true);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (bcvScraper != null) {
+            bcvScraper.destroy();
+        }
     }
 }

@@ -25,8 +25,17 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    
+    lintOptions {
+        disable 'ProtectedPermissions'
+        abortOnError false
+    }
 }
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.alphacephei:vosk-android:0.3.32'
+    implementation 'net.java.dev.jna:jna:5.13.0@aar'
+    implementation 'org.jsoup:jsoup:1.17.2'
+    implementation 'androidx.cardview:cardview:1.0.0'
 }

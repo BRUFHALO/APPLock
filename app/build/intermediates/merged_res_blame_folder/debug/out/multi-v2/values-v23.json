@@ -1,8 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "com.noveasmibeta.app-mergeDebugResources-18:/values-v23/values-v23.xml",
+            "outputFile": "com.noveasmibeta.app-mergeDebugResources-20:/values-v23/values-v23.xml",
             "map": [
+                {
+                    "source": "C:\\Users\\PC\\.gradle\\caches\\9.0-milestone-1\\transforms\\7c9a346f0829635f6b7062ccc39f44bb\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "200"
+                    },
+                    "to": {
+                        "startLines": "50",
+                        "startColumns": "4",
+                        "startOffsets": "3232",
+                        "endLines": "52",
+                        "endColumns": "12",
+                        "endOffsets": "3377"
+                    }
+                },
                 {
                     "source": "C:\\Users\\PC\\.gradle\\caches\\9.0-milestone-1\\transforms\\7ff9ee7482a8dc9b9850645cff3f693b\\transformed\\appcompat-1.6.1\\res\\values-v23\\values-v23.xml",
                     "from": {

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.noveasmibeta.app-mergeDebugResources-18:/values-ka/values-ka.xml",
+            "outputFile": "com.noveasmibeta.app-mergeDebugResources-20:/values-ka/values-ka.xml",
             "map": [
                 {
                     "source": "C:\\Users\\PC\\.gradle\\caches\\9.0-milestone-1\\transforms\\7ff9ee7482a8dc9b9850645cff3f693b\\transformed\\appcompat-1.6.1\\res\\values-ka\\values-ka.xml",

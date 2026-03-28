@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">No Veas Mi Beta</string>
+    <style name="Theme.NoVeasMiBeta" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">#1a1a2e</item>
+        <item name="android:navigationBarColor">#1a1a2e</item>
+    </style>
+</resources>

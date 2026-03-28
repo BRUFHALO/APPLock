@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="32dp"
+    android:background="#1a1a2e">
+
+    <!-- Logo/Título -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🔒"
+        android:textSize="72sp"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No Veas Mi Beta"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bloqueo de Pantalla"
+        android:textSize="16sp"
+        android:textColor="#B0B0B0"
+        android:layout_marginBottom="48dp" />
+
+    <!-- Estado -->
+    <TextView
+        android:id="@+id/statusText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Verificando estado..."
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="32dp"
+        android:padding="16dp"
+        android:background="@drawable/status_background" />
+
+    <!-- Botón de Bloquear -->
+    <Button
+        android:id="@+id/lockButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🔒 BLOQUEAR PANTALLA"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/button_lock"
+        android:padding="20dp"
+        android:layout_marginBottom="16dp"
+        android:enabled="false" />
+
+    <!-- Botón de Comando de Voz -->
+    <Button
+        android:id="@+id/voiceButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🎤 COMANDO DE VOZ"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/button_voice"
+        android:padding="20dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Botón de Activar Admin -->
+    <Button
+        android:id="@+id/enableAdminButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="⚙️ ACTIVAR PERMISOS"
+        android:textSize="16sp"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/button_enable"
+        android:padding="16dp"
+        android:visibility="gone" />
+
+    <!-- Información -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Toca el botón para bloquear\nla pantalla instantáneamente"
+        android:textSize="14sp"
+        android:textColor="#808080"
+        android:textAlignment="center"
+        android:layout_marginTop="32dp" />
+
+    <!-- Créditos -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Desarrollado por BRUFHALO"
+        android:textSize="12sp"
+        android:textColor="#606060"
+        android:textStyle="italic"
+        android:textAlignment="center"
+        android:layout_marginTop="24dp" />
+
+</LinearLayout>

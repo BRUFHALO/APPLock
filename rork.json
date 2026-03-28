@@ -1,0 +1,14 @@
+{
+  "apps": [
+    {
+      "name": "Voice Control - Control por Voz",
+      "path": "expo",
+      "framework": "react-native"
+    },
+    {
+      "name": "Voice Control",
+      "path": "expo",
+      "framework": "react-native"
+    }
+  ]
+}

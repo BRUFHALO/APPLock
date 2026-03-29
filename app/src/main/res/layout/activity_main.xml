@@ -133,6 +133,15 @@
                     android:textColor="#FF9800"
                     android:visibility="gone" />
 
+                <ProgressBar
+                    android:id="@+id/bcvLoader"
+                    style="?android:attr/progressBarStyleSmall"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="8dp"
+                    android:visibility="gone"
+                    android:indeterminateTint="#FFD700" />
+
                 <Button
                     android:id="@+id/bcvRefreshButton"
                     android:layout_width="wrap_content"
@@ -258,6 +267,19 @@
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
+
+    <!-- Botón Calculadora -->
+    <Button
+        android:id="@+id/calculatorButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🧮 CALCULADORA MULTIMONEDA"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/button_voice"
+        android:padding="16dp"
+        android:layout_marginTop="12dp" />
 
     <!-- Información -->
     <TextView

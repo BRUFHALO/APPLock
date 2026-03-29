@@ -91,13 +91,13 @@ public class BcvScraper {
                 Element dolarElement = doc.select("#dolar strong").first();
                 // Extraer euro
                 Element euroElement = doc.select("#euro strong").first();
-                // Extraer fecha de vigencia
-                Element fechaElement = doc.select(".pull-right .dinpro").first();
+                // Extraer fecha de vigencia (selector corregido)
+                Element fechaElement = doc.select("span.date-display-single").first();
                 if (fechaElement == null) {
-                    fechaElement = doc.select(".fecha-valor span").first();
+                    fechaElement = doc.select(".pull-right .dinpro").first();
                 }
                 if (fechaElement == null) {
-                    fechaElement = doc.select(".recuadrotsmc .centrado span").first();
+                    fechaElement = doc.select(".fecha-valor span").first();
                 }
 
                 BcvData data = new BcvData();
@@ -124,9 +124,9 @@ public class BcvScraper {
                     data.euro = 0;
                 }
 
-                // Sanitizar fecha
+                // Sanitizar fecha con limpieza de espacios múltiples
                 if (fechaElement != null) {
-                    data.fechaValor = fechaElement.text().trim();
+                    data.fechaValor = fechaElement.text().replaceAll("\\s+", " ").trim();
                     Log.d(TAG, "Fecha valor: " + data.fechaValor);
                 } else {
                     Log.w(TAG, "No se encontró fecha de vigencia");

@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:2:1-53:12
-INJECTED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:2:1-53:12
-INJECTED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:2:1-53:12
-INJECTED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:2:1-53:12
+ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:2:1-79:12
+INJECTED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:2:1-79:12
+INJECTED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:2:1-79:12
+INJECTED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:2:1-79:12
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\36f5d57051deeec07ee10e777abdb601\transformed\jetified-appcompat-resources-1.6.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\7ff9ee7482a8dc9b9850645cff3f693b\transformed\appcompat-1.6.1\AndroidManifest.xml:17:1-22:12
 MERGED from [com.alphacephei:vosk-android:0.3.32] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\b41bc572ff8de39f79852c8dd707c8e0\transformed\jetified-vosk-android-0.3.32\AndroidManifest.xml:2:1-9:12
@@ -72,9 +72,25 @@ uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:11:5-79
 	android:name
 		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:11:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:12:5-76
+	android:name
+		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:12:22-73
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:13:5-81
+	android:name
+		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:13:22-78
+uses-permission#android.permission.WAKE_LOCK
+ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:14:5-68
+	android:name
+		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:14:22-65
+uses-permission#android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS
+ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:15:5-95
+	android:name
+		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:15:22-92
 application
-ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:13:5-51:19
-INJECTED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:13:5-51:19
+ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:17:5-77:19
+INJECTED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:17:5-77:19
 MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\42a0b624719de7f264fd270db839c6e4\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\42a0b624719de7f264fd270db839c6e4\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.core:core:1.9.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\4428070d35b5908e2590b1f7977b0c86\transformed\core-1.9.0\AndroidManifest.xml:28:5-89
@@ -90,69 +106,107 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\PC
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.9.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\4428070d35b5908e2590b1f7977b0c86\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:17:9-35
+		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:21:9-35
 	android:label
-		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:16:9-41
+		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:20:9-41
 	android:icon
-		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:15:9-54
+		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:19:9-54
 	android:allowBackup
-		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:14:9-35
+		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:18:9-35
 	android:theme
-		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:18:9-50
+		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:22:9-50
 activity#com.noveasmibeta.MainActivity
-ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:20:9-27:20
+ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:24:9-31:20
 	android:exported
-		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:22:13-36
+		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:26:13-36
 	android:name
-		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:21:13-41
+		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:25:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:23:13-26:29
+ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:27:13-30:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:24:17-69
+ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:28:17-69
 	android:name
-		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:24:25-66
+		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:28:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:25:17-77
+ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:29:17-77
 	android:name
-		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:25:27-74
+		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:29:27-74
+activity#com.noveasmibeta.CalculatorActivity
+ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:33:9-36:57
+	android:exported
+		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:35:13-37
+	android:theme
+		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:36:13-54
+	android:name
+		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:34:13-47
 service#com.noveasmibeta.VoiceListenerService
-ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:29:9-33:58
+ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:38:9-42:58
 	android:enabled
-		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:31:13-35
+		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:40:13-35
 	android:exported
-		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:32:13-37
+		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:41:13-37
 	android:foregroundServiceType
-		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:33:13-55
+		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:42:13-55
 	android:name
-		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:30:13-49
+		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:39:13-49
 service#com.noveasmibeta.VoskVoiceService
-ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:35:9-38:40
+ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:44:9-48:58
 	android:enabled
-		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:37:13-35
+		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:46:13-35
 	android:exported
-		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:38:13-37
+		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:47:13-37
+	android:foregroundServiceType
+		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:48:13-55
 	android:name
-		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:36:13-45
+		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:45:13-45
+service#com.noveasmibeta.GoogleVoiceService
+ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:50:9-54:58
+	android:enabled
+		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:52:13-35
+	android:exported
+		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:53:13-37
+	android:foregroundServiceType
+		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:54:13-55
+	android:name
+		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:51:13-47
 receiver#com.noveasmibeta.AdminReceiver
-ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:40:9-50:20
+ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:56:9-66:20
 	android:exported
-		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:43:13-36
+		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:59:13-36
 	android:permission
-		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:42:13-70
+		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:58:13-70
 	android:name
-		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:41:13-42
+		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:57:13-42
 meta-data#android.app.device_admin
-ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:44:13-46:56
+ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:60:13-62:56
 	android:resource
-		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:46:17-53
+		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:62:17-53
 	android:name
-		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:45:17-56
+		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:61:17-56
 intent-filter#action:name:android.app.action.DEVICE_ADMIN_ENABLED
-ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:47:13-49:29
+ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:63:13-65:29
 action#android.app.action.DEVICE_ADMIN_ENABLED
-ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:48:17-82
+ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:64:17-82
 	android:name
-		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:48:25-79
+		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:64:25-79
+receiver#com.noveasmibeta.BootReceiver
+ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:68:9-76:20
+	android:enabled
+		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:70:13-35
+	android:exported
+		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:71:13-36
+	android:name
+		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:69:13-41
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:android.intent.action.QUICKBOOT_POWERON
+ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:72:13-75:29
+action#android.intent.action.BOOT_COMPLETED
+ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:73:17-79
+	android:name
+		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:73:25-76
+action#android.intent.action.QUICKBOOT_POWERON
+ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:74:17-82
+	android:name
+		ADDED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:74:25-79
 uses-sdk
 INJECTED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml

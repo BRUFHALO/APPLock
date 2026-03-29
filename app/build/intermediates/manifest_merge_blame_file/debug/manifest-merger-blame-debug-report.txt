@@ -29,115 +29,165 @@
 17    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 17-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:11:5-79
 17-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:11:22-76
-18
-19    <permission
-19-->[androidx.core:core:1.9.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\4428070d35b5908e2590b1f7977b0c86\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
-20        android:name="com.noveasmibeta.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-20-->[androidx.core:core:1.9.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\4428070d35b5908e2590b1f7977b0c86\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
-21        android:protectionLevel="signature" />
-21-->[androidx.core:core:1.9.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\4428070d35b5908e2590b1f7977b0c86\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+18    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+18-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:12:5-76
+18-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:12:22-73
+19    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+19-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:13:5-81
+19-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:13:22-78
+20    <uses-permission android:name="android.permission.WAKE_LOCK" />
+20-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:14:5-68
+20-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:14:22-65
+21    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+21-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:15:5-95
+21-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:15:22-92
 22
-23    <uses-permission android:name="com.noveasmibeta.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-23-->[androidx.core:core:1.9.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\4428070d35b5908e2590b1f7977b0c86\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
-23-->[androidx.core:core:1.9.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\4428070d35b5908e2590b1f7977b0c86\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
-24
-25    <application
-25-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:13:5-51:19
-26        android:allowBackup="true"
-26-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:14:9-35
-27        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-27-->[androidx.core:core:1.9.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\4428070d35b5908e2590b1f7977b0c86\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
-28        android:debuggable="true"
-29        android:extractNativeLibs="false"
-30        android:icon="@android:drawable/ic_lock_lock"
-30-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:15:9-54
-31        android:label="@string/app_name"
-31-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:16:9-41
-32        android:supportsRtl="true"
-32-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:17:9-35
-33        android:theme="@style/Theme.NoVeasMiBeta" >
-33-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:18:9-50
-34        <activity
-34-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:20:9-27:20
-35            android:name="com.noveasmibeta.MainActivity"
-35-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:21:13-41
-36            android:exported="true" >
-36-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:22:13-36
-37            <intent-filter>
-37-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:23:13-26:29
-38                <action android:name="android.intent.action.MAIN" />
-38-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:24:17-69
-38-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:24:25-66
-39
-40                <category android:name="android.intent.category.LAUNCHER" />
-40-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:25:17-77
-40-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:25:27-74
-41            </intent-filter>
-42        </activity>
+23    <permission
+23-->[androidx.core:core:1.9.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\4428070d35b5908e2590b1f7977b0c86\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+24        android:name="com.noveasmibeta.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+24-->[androidx.core:core:1.9.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\4428070d35b5908e2590b1f7977b0c86\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+25        android:protectionLevel="signature" />
+25-->[androidx.core:core:1.9.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\4428070d35b5908e2590b1f7977b0c86\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+26
+27    <uses-permission android:name="com.noveasmibeta.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+27-->[androidx.core:core:1.9.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\4428070d35b5908e2590b1f7977b0c86\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+27-->[androidx.core:core:1.9.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\4428070d35b5908e2590b1f7977b0c86\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+28
+29    <application
+29-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:17:5-77:19
+30        android:allowBackup="true"
+30-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:18:9-35
+31        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+31-->[androidx.core:core:1.9.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\4428070d35b5908e2590b1f7977b0c86\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+32        android:debuggable="true"
+33        android:extractNativeLibs="false"
+34        android:icon="@android:drawable/ic_lock_lock"
+34-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:19:9-54
+35        android:label="@string/app_name"
+35-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:20:9-41
+36        android:supportsRtl="true"
+36-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:21:9-35
+37        android:theme="@style/Theme.NoVeasMiBeta" >
+37-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:22:9-50
+38        <activity
+38-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:24:9-31:20
+39            android:name="com.noveasmibeta.MainActivity"
+39-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:25:13-41
+40            android:exported="true" >
+40-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:26:13-36
+41            <intent-filter>
+41-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:27:13-30:29
+42                <action android:name="android.intent.action.MAIN" />
+42-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:28:17-69
+42-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:28:25-66
 43
-44        <service
-44-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:29:9-33:58
-45            android:name="com.noveasmibeta.VoiceListenerService"
-45-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:30:13-49
-46            android:enabled="true"
-46-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:31:13-35
-47            android:exported="false"
-47-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:32:13-37
-48            android:foregroundServiceType="microphone" />
-48-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:33:13-55
-49        <service
-49-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:35:9-38:40
-50            android:name="com.noveasmibeta.VoskVoiceService"
-50-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:36:13-45
-51            android:enabled="true"
-51-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:37:13-35
-52            android:exported="false" />
-52-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:38:13-37
-53
-54        <receiver
-54-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:40:9-50:20
-55            android:name="com.noveasmibeta.AdminReceiver"
-55-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:41:13-42
-56            android:exported="true"
-56-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:43:13-36
-57            android:permission="android.permission.BIND_DEVICE_ADMIN" >
-57-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:42:13-70
-58            <meta-data
-58-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:44:13-46:56
-59                android:name="android.app.device_admin"
-59-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:45:17-56
-60                android:resource="@xml/device_admin" />
-60-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:46:17-53
-61
-62            <intent-filter>
-62-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:47:13-49:29
-63                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
-63-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:48:17-82
-63-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:48:25-79
-64            </intent-filter>
-65        </receiver>
-66
-67        <provider
-67-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\42a0b624719de7f264fd270db839c6e4\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-68            android:name="androidx.startup.InitializationProvider"
-68-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\42a0b624719de7f264fd270db839c6e4\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
-69            android:authorities="com.noveasmibeta.androidx-startup"
-69-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\42a0b624719de7f264fd270db839c6e4\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
-70            android:exported="false" >
-70-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\42a0b624719de7f264fd270db839c6e4\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
-71            <meta-data
-71-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\42a0b624719de7f264fd270db839c6e4\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-72                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-72-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\42a0b624719de7f264fd270db839c6e4\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
-73                android:value="androidx.startup" />
-73-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\42a0b624719de7f264fd270db839c6e4\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
-74            <meta-data
-74-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\2e6c2777d222b10edc4a57fc219227af\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
-75                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-75-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\2e6c2777d222b10edc4a57fc219227af\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
-76                android:value="androidx.startup" />
-76-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\2e6c2777d222b10edc4a57fc219227af\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
-77        </provider>
-78    </application>
-79
-80</manifest>
+44                <category android:name="android.intent.category.LAUNCHER" />
+44-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:29:17-77
+44-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:29:27-74
+45            </intent-filter>
+46        </activity>
+47        <activity
+47-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:33:9-36:57
+48            android:name="com.noveasmibeta.CalculatorActivity"
+48-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:34:13-47
+49            android:exported="false"
+49-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:35:13-37
+50            android:theme="@style/Theme.NoVeasMiBeta" />
+50-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:36:13-54
+51
+52        <service
+52-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:38:9-42:58
+53            android:name="com.noveasmibeta.VoiceListenerService"
+53-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:39:13-49
+54            android:enabled="true"
+54-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:40:13-35
+55            android:exported="false"
+55-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:41:13-37
+56            android:foregroundServiceType="microphone" />
+56-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:42:13-55
+57        <service
+57-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:44:9-48:58
+58            android:name="com.noveasmibeta.VoskVoiceService"
+58-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:45:13-45
+59            android:enabled="true"
+59-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:46:13-35
+60            android:exported="false"
+60-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:47:13-37
+61            android:foregroundServiceType="microphone" />
+61-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:48:13-55
+62        <service
+62-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:50:9-54:58
+63            android:name="com.noveasmibeta.GoogleVoiceService"
+63-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:51:13-47
+64            android:enabled="true"
+64-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:52:13-35
+65            android:exported="false"
+65-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:53:13-37
+66            android:foregroundServiceType="microphone" />
+66-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:54:13-55
+67
+68        <receiver
+68-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:56:9-66:20
+69            android:name="com.noveasmibeta.AdminReceiver"
+69-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:57:13-42
+70            android:exported="true"
+70-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:59:13-36
+71            android:permission="android.permission.BIND_DEVICE_ADMIN" >
+71-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:58:13-70
+72            <meta-data
+72-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:60:13-62:56
+73                android:name="android.app.device_admin"
+73-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:61:17-56
+74                android:resource="@xml/device_admin" />
+74-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:62:17-53
+75
+76            <intent-filter>
+76-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:63:13-65:29
+77                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+77-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:64:17-82
+77-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:64:25-79
+78            </intent-filter>
+79        </receiver>
+80        <receiver
+80-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:68:9-76:20
+81            android:name="com.noveasmibeta.BootReceiver"
+81-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:69:13-41
+82            android:enabled="true"
+82-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:70:13-35
+83            android:exported="true" >
+83-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:71:13-36
+84            <intent-filter>
+84-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:72:13-75:29
+85                <action android:name="android.intent.action.BOOT_COMPLETED" />
+85-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:73:17-79
+85-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:73:25-76
+86                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+86-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:74:17-82
+86-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:74:25-79
+87            </intent-filter>
+88        </receiver>
+89
+90        <provider
+90-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\42a0b624719de7f264fd270db839c6e4\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+91            android:name="androidx.startup.InitializationProvider"
+91-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\42a0b624719de7f264fd270db839c6e4\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+92            android:authorities="com.noveasmibeta.androidx-startup"
+92-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\42a0b624719de7f264fd270db839c6e4\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+93            android:exported="false" >
+93-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\42a0b624719de7f264fd270db839c6e4\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+94            <meta-data
+94-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\42a0b624719de7f264fd270db839c6e4\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+95                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+95-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\42a0b624719de7f264fd270db839c6e4\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+96                android:value="androidx.startup" />
+96-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\42a0b624719de7f264fd270db839c6e4\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+97            <meta-data
+97-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\2e6c2777d222b10edc4a57fc219227af\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+98                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+98-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\2e6c2777d222b10edc4a57fc219227af\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+99                android:value="androidx.startup" />
+99-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\2e6c2777d222b10edc4a57fc219227af\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+100        </provider>
+101    </application>
+102
+103</manifest>

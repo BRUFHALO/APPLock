@@ -12,12 +12,9 @@ import android.net.NetworkInfo;
 import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.core.app.ActivityCompat;
@@ -38,22 +35,6 @@ public class MainActivity extends Activity {
     private Button voiceButton;
     private Button calculatorButton;
 
-    // BCV UI
-    private TextView bcvDolarPrice;
-    private TextView bcvEuroPrice;
-    private TextView bcvFechaValor;
-    private TextView bcvLastUpdate;
-    private TextView bcvVigencia;
-    private TextView bcvCacheIndicator;
-    private Button bcvRefreshButton;
-    private ProgressBar bcvLoader;
-    private BcvScraper bcvScraper;
-    private Handler mainHandler;
-
-    // Tasas para pasar a la calculadora
-    private double lastTasaDolar = 0;
-    private double lastTasaEuro = 0;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,28 +50,13 @@ public class MainActivity extends Activity {
         voiceButton = findViewById(R.id.voiceButton);
         calculatorButton = findViewById(R.id.calculatorButton);
 
-        // BCV UI References
-        bcvDolarPrice = findViewById(R.id.bcvDolarPrice);
-        bcvEuroPrice = findViewById(R.id.bcvEuroPrice);
-        bcvFechaValor = findViewById(R.id.bcvFechaValor);
-        bcvLastUpdate = findViewById(R.id.bcvLastUpdate);
-        bcvVigencia = findViewById(R.id.bcvVigencia);
-        bcvCacheIndicator = findViewById(R.id.bcvCacheIndicator);
-        bcvRefreshButton = findViewById(R.id.bcvRefreshButton);
-        bcvLoader = findViewById(R.id.bcvLoader);
-
-        mainHandler = new Handler(Looper.getMainLooper());
-        bcvScraper = new BcvScraper(this);
-
         // Botones principales
         lockButton.setOnClickListener(v -> lockScreen());
         enableAdminButton.setOnClickListener(v -> enableDeviceAdmin());
         voiceButton.setOnClickListener(v -> toggleVoiceService());
-        bcvRefreshButton.setOnClickListener(v -> fetchBcvData());
         calculatorButton.setOnClickListener(v -> openCalculator());
 
         updateUI();
-        fetchBcvData();
     }
 
     @Override
@@ -216,8 +182,9 @@ public class MainActivity extends Activity {
 
     private void openCalculator() {
         Intent intent = new Intent(this, CalculatorActivity.class);
-        intent.putExtra("tasa_dolar", lastTasaDolar);
-        intent.putExtra("tasa_euro", lastTasaEuro);
+        // La calculadora cargará las tasas sola desde BCV
+        intent.putExtra("tasa_dolar", 0);
+        intent.putExtra("tasa_euro", 0);
         startActivity(intent);
     }
 
@@ -283,105 +250,5 @@ public class MainActivity extends Activity {
         ActivityCompat.requestPermissions(this,
                 new String[]{Manifest.permission.RECORD_AUDIO},
                 REQUEST_CODE_RECORD_AUDIO);
-    }
-
-    // ========== BCV Scraper ==========
-
-    private void fetchBcvData() {
-        // Mostrar loader y deshabilitar botón
-        bcvRefreshButton.setEnabled(false);
-        bcvRefreshButton.setVisibility(View.INVISIBLE);
-        bcvLoader.setVisibility(View.VISIBLE);
-        bcvDolarPrice.setText("...");
-        bcvEuroPrice.setText("...");
-
-        bcvScraper.obtenerTasas(new BcvScraper.BcvCallback() {
-            @Override
-            public void onSuccess(BcvScraper.BcvData data) {
-                mainHandler.post(() -> {
-                    updateBcvUI(data);
-                    hideLoader();
-                });
-            }
-
-            @Override
-            public void onError(String error, BcvScraper.BcvData cachedData) {
-                mainHandler.post(() -> {
-                    if (cachedData != null) {
-                        updateBcvUI(cachedData);
-                        Toast.makeText(MainActivity.this, error + " (mostrando caché)", Toast.LENGTH_SHORT).show();
-                    } else {
-                        bcvDolarPrice.setText("---");
-                        bcvDolarPrice.setTextColor(0xFFFF5252);
-                        bcvEuroPrice.setText("---");
-                        bcvEuroPrice.setTextColor(0xFFFF5252);
-                        bcvFechaValor.setText("📅 " + error);
-                        bcvLastUpdate.setText("");
-                        Toast.makeText(MainActivity.this, error, Toast.LENGTH_LONG).show();
-                    }
-                    hideLoader();
-                });
-            }
-        });
-    }
-
-    private void hideLoader() {
-        bcvLoader.setVisibility(View.GONE);
-        bcvRefreshButton.setVisibility(View.VISIBLE);
-        bcvRefreshButton.setEnabled(true);
-    }
-
-    private void updateBcvUI(BcvScraper.BcvData data) {
-        // Guardar tasas para la calculadora
-        lastTasaDolar = data.dolar;
-        lastTasaEuro = data.euro;
-
-        // Dólar
-        if (data.dolar > 0) {
-            bcvDolarPrice.setText(data.dolarStr);
-            bcvDolarPrice.setTextColor(0xFF4CAF50);
-        } else {
-            bcvDolarPrice.setText("N/A");
-            bcvDolarPrice.setTextColor(0xFFFF5252);
-        }
-
-        // Euro
-        if (data.euro > 0) {
-            bcvEuroPrice.setText(data.euroStr);
-            bcvEuroPrice.setTextColor(0xFF2196F3);
-        } else {
-            bcvEuroPrice.setText("N/A");
-            bcvEuroPrice.setTextColor(0xFFFF5252);
-        }
-
-        // Fecha valor
-        bcvFechaValor.setText("📅 Fecha valor: " + data.fechaValor);
-
-        // Última consulta
-        bcvLastUpdate.setText("🕓 Última consulta: " + data.lastUpdate);
-
-        // Indicador de caché
-        if (data.isCache) {
-            bcvCacheIndicator.setText("📦 Dato en caché");
-            bcvCacheIndicator.setVisibility(View.VISIBLE);
-        } else {
-            bcvCacheIndicator.setVisibility(View.GONE);
-        }
-
-        // Vigencia
-        if (data.vigenciaMsg != null && !data.vigenciaMsg.isEmpty()) {
-            bcvVigencia.setText(data.vigenciaMsg);
-            bcvVigencia.setVisibility(View.VISIBLE);
-        } else {
-            bcvVigencia.setVisibility(View.GONE);
-        }
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        if (bcvScraper != null) {
-            bcvScraper.destroy();
-        }
     }
 }

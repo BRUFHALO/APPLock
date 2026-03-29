@@ -1,5 +1,9 @@
 [
     {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-merged_res-22:\\drawable_bg_calculadora.png.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-main-24:\\drawable\\bg_calculadora.png"
+    },
+    {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-merged_res-22:\\layout_activity_main.xml.flat",
         "source": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-main-24:\\layout\\activity_main.xml"
     },
@@ -16,8 +20,16 @@
         "source": "com.noveasmibeta.app-main-24:/layout/activity_calculator.xml"
     },
     {
-        "merged": "com.noveasmibeta.app-merged_res-22:/layout_activity_main.xml.flat",
-        "source": "com.noveasmibeta.app-main-24:/layout/activity_main.xml"
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-merged_res-22:\\drawable_bg_calculadora_temp.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-main-24:\\drawable\\bg_calculadora_temp.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-merged_res-22:\\drawable_button_back_gradient.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-main-24:\\drawable\\button_back_gradient.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-merged_res-22:\\layout_activity_calculator.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-main-24:\\layout\\activity_calculator.xml"
     },
     {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-merged_res-22:\\drawable_button_enable.xml.flat",

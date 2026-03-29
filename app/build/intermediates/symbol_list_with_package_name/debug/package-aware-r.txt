@@ -626,6 +626,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable bg_calculadora
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -634,6 +635,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable button_back_gradient
 drawable button_enable
 drawable button_lock
 drawable button_voice
@@ -729,8 +731,6 @@ id beginning
 id blocking
 id bottom
 id buttonPanel
-id calcTasaDolar
-id calcTasaEuro
 id calculatorButton
 id center_vertical
 id checkbox
@@ -739,8 +739,11 @@ id chronometer
 id collapseActionView
 id content
 id contentPanel
+id copyBottomButton
+id copyTopButton
 id custom
 id customPanel
+id dataPortalView
 id decor_content_parent
 id default_activity_button
 id dialog_button
@@ -815,6 +818,7 @@ id src_over
 id statusText
 id submenuarrow
 id submit_area
+id swapButton
 id tabMode
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans

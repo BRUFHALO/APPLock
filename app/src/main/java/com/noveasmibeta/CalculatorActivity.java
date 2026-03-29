@@ -1,22 +1,49 @@
 package com.noveasmibeta;
 
 import android.app.Activity;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class CalculatorActivity extends Activity {
 
     private EditText inputTop, inputBottom;
     private Spinner spinnerTop, spinnerBottom;
-    private TextView calcTasaDolar, calcTasaEuro;
+
+    // BCV UI
+    private TextView bcvDolarPrice;
+    private TextView bcvEuroPrice;
+    private TextView bcvFechaValor;
+    private TextView bcvLastUpdate;
+    private TextView bcvVigencia;
+    private TextView bcvCacheIndicator;
+    private Button bcvRefreshButton;
+    private ProgressBar bcvLoader;
+    private BcvScraper bcvScraper;
+    private Handler mainHandler;
+
+    // Data Portal Animation
+    private DataPortalView dataPortalView;
+
+    // Botones de acción
+    private Button swapButton;
+    private Button copyTopButton;
+    private Button copyBottomButton;
 
     private double tasaDolar = 0;
     private double tasaEuro = 0;
@@ -37,21 +64,35 @@ public class CalculatorActivity extends Activity {
         tasaDolar = getIntent().getDoubleExtra("tasa_dolar", 0);
         tasaEuro = getIntent().getDoubleExtra("tasa_euro", 0);
 
-        // Referencias UI
+        // Referencias UI principales
         inputTop = findViewById(R.id.inputTop);
         inputBottom = findViewById(R.id.inputBottom);
         spinnerTop = findViewById(R.id.spinnerTop);
         spinnerBottom = findViewById(R.id.spinnerBottom);
-        calcTasaDolar = findViewById(R.id.calcTasaDolar);
-        calcTasaEuro = findViewById(R.id.calcTasaEuro);
 
-        // Mostrar tasas actuales
-        if (tasaDolar > 0) {
-            calcTasaDolar.setText(String.format("%.2f Bs", tasaDolar));
+        // BCV UI References
+        bcvDolarPrice = findViewById(R.id.bcvDolarPrice);
+        bcvEuroPrice = findViewById(R.id.bcvEuroPrice);
+        bcvFechaValor = findViewById(R.id.bcvFechaValor);
+        bcvLastUpdate = findViewById(R.id.bcvLastUpdate);
+        bcvVigencia = findViewById(R.id.bcvVigencia);
+        bcvCacheIndicator = findViewById(R.id.bcvCacheIndicator);
+        bcvRefreshButton = findViewById(R.id.bcvRefreshButton);
+        bcvLoader = findViewById(R.id.bcvLoader);
+
+        mainHandler = new Handler(Looper.getMainLooper());
+        bcvScraper = new BcvScraper(this);
+
+        // Inicializar Data Portal View
+        dataPortalView = findViewById(R.id.dataPortalView);
+        if (dataPortalView != null) {
+            dataPortalView.post(() -> dataPortalView.startAnimation());
         }
-        if (tasaEuro > 0) {
-            calcTasaEuro.setText(String.format("%.2f Bs", tasaEuro));
-        }
+
+        // Inicializar botones de acción
+        swapButton = findViewById(R.id.swapButton);
+        copyTopButton = findViewById(R.id.copyTopButton);
+        copyBottomButton = findViewById(R.id.copyBottomButton);
 
         // Configurar Spinners con estilo
         setupSpinners();
@@ -59,8 +100,37 @@ public class CalculatorActivity extends Activity {
         // Configurar TextWatchers para conversión en tiempo real
         setupTextWatchers();
 
+        // BCV refresh button
+        bcvRefreshButton.setOnClickListener(v -> fetchBcvData());
+
+        // Botón swap: intercambiar valores
+        swapButton.setOnClickListener(v -> swapValues());
+
+        // Botones de copiar
+        copyTopButton.setOnClickListener(v -> copyToClipboard(inputTop.getText().toString(), "TENGO"));
+        copyBottomButton.setOnClickListener(v -> copyToClipboard(inputBottom.getText().toString(), "QUIERO"));
+
         // Botón volver
         findViewById(R.id.backButton).setOnClickListener(v -> finish());
+
+        // Actualizar UI con tasas iniciales
+        updateBcvUIFromIntent();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (dataPortalView != null) {
+            dataPortalView.stopAnimation();
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (dataPortalView != null) {
+            dataPortalView.startAnimation();
+        }
     }
 
     private void setupSpinners() {
@@ -69,8 +139,8 @@ public class CalculatorActivity extends Activity {
             public View getView(int position, View convertView, ViewGroup parent) {
                 View view = super.getView(position, convertView, parent);
                 TextView tv = (TextView) view;
-                tv.setTextColor(0xFFFFFFFF);
-                tv.setTextSize(16);
+                tv.setTextColor(0xFF2C2416);
+                tv.setTextSize(15);
                 return view;
             }
 
@@ -78,13 +148,13 @@ public class CalculatorActivity extends Activity {
             public View getDropDownView(int position, View convertView, ViewGroup parent) {
                 View view = super.getDropDownView(position, convertView, parent);
                 TextView tv = (TextView) view;
-                tv.setTextColor(0xFFFFFFFF);
-                tv.setBackgroundColor(0xFF222244);
-                tv.setTextSize(16);
-                tv.setPadding(24, 24, 24, 24);
+                tv.setTextColor(0xFF2C2416);
+                tv.setTextSize(15);
+                tv.setPadding(20, 16, 20, 16);
                 return view;
             }
         };
+
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spinnerTop.setAdapter(adapter);
@@ -232,6 +302,155 @@ public class CalculatorActivity extends Activity {
             return String.format("%.2f", value);
         } else {
             return String.format("%.4f", value);
+        }
+    }
+
+    // ========== BCV Scraper ==========
+
+    private void updateBcvUIFromIntent() {
+        // Actualizar card BCV si hay tasas
+        if (tasaDolar > 0) {
+            bcvDolarPrice.setText(String.format("%.2f", tasaDolar));
+            bcvDolarPrice.setTextColor(0xFF2C2416);
+        }
+        if (tasaEuro > 0) {
+            bcvEuroPrice.setText(String.format("%.2f", tasaEuro));
+            bcvEuroPrice.setTextColor(0xFF2C2416);
+        }
+
+        // Si no hay tasas, cargar desde BCV
+        if (tasaDolar <= 0 || tasaEuro <= 0) {
+            fetchBcvData();
+        }
+    }
+
+    private void fetchBcvData() {
+        // Mostrar loader y deshabilitar botón
+        bcvRefreshButton.setEnabled(false);
+        bcvRefreshButton.setVisibility(View.INVISIBLE);
+        bcvLoader.setVisibility(View.VISIBLE);
+        bcvDolarPrice.setText("...");
+        bcvEuroPrice.setText("...");
+
+        bcvScraper.obtenerTasas(new BcvScraper.BcvCallback() {
+            @Override
+            public void onSuccess(BcvScraper.BcvData data) {
+                mainHandler.post(() -> {
+                    updateBcvUI(data);
+                    hideLoader();
+                });
+            }
+
+            @Override
+            public void onError(String error, BcvScraper.BcvData cachedData) {
+                mainHandler.post(() -> {
+                    if (cachedData != null) {
+                        updateBcvUI(cachedData);
+                        Toast.makeText(CalculatorActivity.this, error + " (mostrando caché)", Toast.LENGTH_SHORT).show();
+                    } else {
+                        bcvDolarPrice.setText("---");
+                        bcvDolarPrice.setTextColor(0xFFFF5252);
+                        bcvEuroPrice.setText("---");
+                        bcvEuroPrice.setTextColor(0xFFFF5252);
+                        bcvFechaValor.setText("📅 " + error);
+                        bcvLastUpdate.setText("");
+                        Toast.makeText(CalculatorActivity.this, error, Toast.LENGTH_LONG).show();
+                    }
+                    hideLoader();
+                });
+            }
+        });
+    }
+
+    private void hideLoader() {
+        bcvLoader.setVisibility(View.GONE);
+        bcvRefreshButton.setVisibility(View.VISIBLE);
+        bcvRefreshButton.setEnabled(true);
+    }
+
+    private void updateBcvUI(BcvScraper.BcvData data) {
+        // Actualizar tasas locales para la conversión
+        tasaDolar = data.dolar;
+        tasaEuro = data.euro;
+
+        // Actualizar card BCV (solo 2 decimales)
+        if (data.dolar > 0) {
+            bcvDolarPrice.setText(String.format("%.2f", data.dolar));
+            bcvDolarPrice.setTextColor(0xFF2C2416);
+        } else {
+            bcvDolarPrice.setText("N/A");
+            bcvDolarPrice.setTextColor(0xFF8B7E6A);
+        }
+
+        if (data.euro > 0) {
+            bcvEuroPrice.setText(String.format("%.2f", data.euro));
+            bcvEuroPrice.setTextColor(0xFF2C2416);
+        } else {
+            bcvEuroPrice.setText("N/A");
+            bcvEuroPrice.setTextColor(0xFF8B7E6A);
+        }
+
+        // Fecha valor
+        bcvFechaValor.setText("📅 Fecha valor: " + data.fechaValor);
+
+        // Última consulta
+        bcvLastUpdate.setText("🕓 Última consulta: " + data.lastUpdate);
+
+        // Indicador de caché
+        if (data.isCache) {
+            bcvCacheIndicator.setText("📦 Dato en caché");
+            bcvCacheIndicator.setVisibility(View.VISIBLE);
+        } else {
+            bcvCacheIndicator.setVisibility(View.GONE);
+        }
+
+        // Vigencia
+        if (data.vigenciaMsg != null && !data.vigenciaMsg.isEmpty()) {
+            bcvVigencia.setText(data.vigenciaMsg);
+            bcvVigencia.setVisibility(View.VISIBLE);
+        } else {
+            bcvVigencia.setVisibility(View.GONE);
+        }
+    }
+
+    // ========== Swap & Copy ==========
+
+    private void swapValues() {
+        // Guardar valores actuales
+        String topValue = inputTop.getText().toString();
+        String bottomValue = inputBottom.getText().toString();
+        int topCurrency = spinnerTop.getSelectedItemPosition();
+        int bottomCurrency = spinnerBottom.getSelectedItemPosition();
+
+        // Intercambiar valores
+        isUpdating = true;
+        inputTop.setText(bottomValue);
+        inputBottom.setText(topValue);
+        spinnerTop.setSelection(bottomCurrency);
+        spinnerBottom.setSelection(topCurrency);
+        isUpdating = false;
+
+        // Forzar recálculo
+        convertFromTop();
+    }
+
+    private void copyToClipboard(String value, String label) {
+        if (value == null || value.isEmpty() || value.equals("0.00")) {
+            Toast.makeText(this, "No hay valor para copiar", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+        ClipData clip = ClipData.newPlainText(label, value);
+        clipboard.setPrimaryClip(clip);
+        Toast.makeText(this, "✓ Copiado: " + value, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (bcvScraper != null) {
+            bcvScraper.destroy();
         }
     }
 }

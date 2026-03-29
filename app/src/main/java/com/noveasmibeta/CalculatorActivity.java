@@ -5,6 +5,8 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -47,6 +49,13 @@ public class CalculatorActivity extends Activity {
     private Button copyTopButton;
     private Button copyBottomButton;
     private Button bcvNotifButton;
+    private Button shareWhatsappButton;
+    private Button changeQrButton;
+
+    // Share helper
+    private PaymentShareHelper shareHelper;
+    private static final int PICK_QR_IMAGE = 100;
+    private static final int REQUEST_READ_IMAGES = 101;
 
     private double tasaDolar = 0;
     private double tasaEuro = 0;
@@ -117,6 +126,14 @@ public class CalculatorActivity extends Activity {
         bcvNotifButton = findViewById(R.id.bcvNotifButton);
         bcvNotifButton.setOnClickListener(v -> toggleBcvNotification());
         updateBcvNotifButtonText();
+
+        // Botones de compartir
+        shareHelper = new PaymentShareHelper(this);
+        shareWhatsappButton = findViewById(R.id.shareWhatsappButton);
+        changeQrButton = findViewById(R.id.changeQrButton);
+        shareWhatsappButton.setOnClickListener(v -> handleShareClick());
+        changeQrButton.setOnClickListener(v -> pickQrImage());
+        updateShareButtonState();
 
         // Botón volver
         findViewById(R.id.backButton).setOnClickListener(v -> finish());
@@ -461,6 +478,89 @@ public class CalculatorActivity extends Activity {
             }
         }
         return false;
+    }
+
+    // ========== WhatsApp Share ==========
+
+    private void handleShareClick() {
+        if (!shareHelper.hasQrSaved()) {
+            Toast.makeText(this, "Primero selecciona la imagen QR de tu banco", Toast.LENGTH_LONG).show();
+            pickQrImage();
+            return;
+        }
+
+        String montoTop = inputTop.getText().toString().trim();
+        String montoBottom = inputBottom.getText().toString().trim();
+
+        if (montoTop.isEmpty() && montoBottom.isEmpty()) {
+            Toast.makeText(this, "Ingresa un monto para compartir", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        String currencyTop = CURRENCIES[spinnerTop.getSelectedItemPosition()];
+        String currencyBottom = CURRENCIES[spinnerBottom.getSelectedItemPosition()];
+
+        shareHelper.generateAndShare(montoTop, currencyTop, montoBottom, currencyBottom, tasaDolar);
+    }
+
+    private void pickQrImage() {
+        if (Build.VERSION.SDK_INT >= 33) {
+            if (checkSelfPermission(android.Manifest.permission.READ_MEDIA_IMAGES) != PackageManager.PERMISSION_GRANTED) {
+                requestPermissions(new String[]{android.Manifest.permission.READ_MEDIA_IMAGES}, REQUEST_READ_IMAGES);
+                return;
+            }
+        } else if (Build.VERSION.SDK_INT >= 23) {
+            if (checkSelfPermission(android.Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                requestPermissions(new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE}, REQUEST_READ_IMAGES);
+                return;
+            }
+        }
+        launchImagePicker();
+    }
+
+    private void launchImagePicker() {
+        Intent intent = new Intent(Intent.ACTION_PICK);
+        intent.setType("image/*");
+        startActivityForResult(intent, PICK_QR_IMAGE);
+    }
+
+    private void updateShareButtonState() {
+        if (shareHelper.hasQrSaved()) {
+            shareWhatsappButton.setText("📤 COMPARTIR POR WHATSAPP");
+            changeQrButton.setVisibility(View.VISIBLE);
+        } else {
+            shareWhatsappButton.setText("📤 SELECCIONAR QR Y COMPARTIR");
+            changeQrButton.setVisibility(View.GONE);
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == PICK_QR_IMAGE && resultCode == RESULT_OK && data != null) {
+            Uri imageUri = data.getData();
+            if (imageUri != null) {
+                boolean saved = shareHelper.saveQrImage(imageUri);
+                if (saved) {
+                    Toast.makeText(this, "\u2705 QR guardado correctamente", Toast.LENGTH_SHORT).show();
+                    updateShareButtonState();
+                } else {
+                    Toast.makeText(this, "Error al guardar el QR", Toast.LENGTH_SHORT).show();
+                }
+            }
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == REQUEST_READ_IMAGES) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                launchImagePicker();
+            } else {
+                Toast.makeText(this, "Se necesita permiso para acceder a las im\u00e1genes", Toast.LENGTH_LONG).show();
+            }
+        }
     }
 
     // ========== Swap & Copy ==========

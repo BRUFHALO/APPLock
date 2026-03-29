@@ -1,10 +1,13 @@
 R_DEF: Internal format may change without notice
 local
+color ic_launcher_background
 drawable bg_calculadora
 drawable button_back_gradient
 drawable button_enable
 drawable button_lock
 drawable button_voice
+drawable button_whatsapp
+drawable ic_launcher_foreground
 drawable status_background
 drawable widget_background
 id backButton
@@ -19,6 +22,7 @@ id bcvNotifButton
 id bcvRefreshButton
 id bcvVigencia
 id calculatorButton
+id changeQrButton
 id copyBottomButton
 id copyTopButton
 id dataPortalView
@@ -26,6 +30,7 @@ id enableAdminButton
 id inputBottom
 id inputTop
 id lockButton
+id shareWhatsappButton
 id spinnerBottom
 id spinnerTop
 id statusText
@@ -39,8 +44,16 @@ id widgetRoot
 layout activity_calculator
 layout activity_main
 layout widget_dolar_rate
+mipmap ic_launcher
 string app_name
+string gcm_defaultSenderId
+string google_api_key
+string google_app_id
+string google_crash_reporting_api_key
+string google_storage_bucket
+string project_id
 string widget_description
 style Theme.NoVeasMiBeta
 xml device_admin
 xml dolar_widget_info
+xml file_paths

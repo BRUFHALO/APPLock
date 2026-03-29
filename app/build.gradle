@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -38,4 +39,7 @@ dependencies {
     implementation 'net.java.dev.jna:jna:5.13.0@aar'
     implementation 'org.jsoup:jsoup:1.17.2'
     implementation 'androidx.cardview:cardview:1.0.0'
+    
+    // Firebase BoM
+    implementation platform('com.google.firebase:firebase-bom:32.7.0')
 }

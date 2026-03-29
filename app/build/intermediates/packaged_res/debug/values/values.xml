@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="ic_launcher_background">#121226</color>
     <string name="app_name">No Veas Mi Beta</string>
+    <string name="gcm_defaultSenderId" translatable="false">751447288021</string>
+    <string name="google_api_key" translatable="false">AIzaSyAh3jXLiKDoEUb-awRSGODSMoFUKkJzGHA</string>
+    <string name="google_app_id" translatable="false">1:751447288021:android:a960742eb354da44091a5c</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAh3jXLiKDoEUb-awRSGODSMoFUKkJzGHA</string>
+    <string name="google_storage_bucket" translatable="false">brufhalo-apps.firebasestorage.app</string>
+    <string name="project_id" translatable="false">brufhalo-apps</string>
     <string name="widget_description">Muestra la tasa del dólar y euro BCV en tiempo real</string>
     <style name="Theme.NoVeasMiBeta" parent="android:Theme.Material.Light.NoActionBar">
         <item name="android:statusBarColor">#1a1a2e</item>

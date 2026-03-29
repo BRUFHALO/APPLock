@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "751447288021",
+    "project_id": "brufhalo-apps",
+    "storage_bucket": "brufhalo-apps.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:751447288021:android:a960742eb354da44091a5c",
+        "android_client_info": {
+          "package_name": "com.noveasmibeta"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAh3jXLiKDoEUb-awRSGODSMoFUKkJzGHA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

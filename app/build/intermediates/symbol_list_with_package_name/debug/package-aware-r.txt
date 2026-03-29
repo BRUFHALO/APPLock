@@ -388,6 +388,7 @@ color foreground_material_dark
 color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color ic_launcher_background
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -639,6 +640,8 @@ drawable button_back_gradient
 drawable button_enable
 drawable button_lock
 drawable button_voice
+drawable button_whatsapp
+drawable ic_launcher_foreground
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -735,6 +738,7 @@ id bottom
 id buttonPanel
 id calculatorButton
 id center_vertical
+id changeQrButton
 id checkbox
 id checked
 id chronometer
@@ -805,6 +809,7 @@ id search_plate
 id search_src_text
 id search_voice_btn
 id select_dialog_listview
+id shareWhatsappButton
 id shortcut
 id showCustom
 id showHome
@@ -916,6 +921,7 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 layout widget_dolar_rate
+mipmap ic_launcher
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -945,7 +951,13 @@ string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string androidx_startup
 string app_name
+string gcm_defaultSenderId
+string google_api_key
+string google_app_id
+string google_crash_reporting_api_key
+string google_storage_bucket
 string jna_library_appname
+string project_id
 string search_menu_title
 string status_bar_notification_info_overflow
 string widget_description
@@ -1354,3 +1366,4 @@ styleable ViewBackgroundHelper android_background backgroundTint backgroundTintM
 styleable ViewStubCompat android_id android_layout android_inflatedId
 xml device_admin
 xml dolar_widget_info
+xml file_paths

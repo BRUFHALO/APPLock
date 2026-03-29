@@ -6,6 +6,7 @@ drawable button_enable
 drawable button_lock
 drawable button_voice
 drawable status_background
+drawable widget_background
 id backButton
 id bcvCacheIndicator
 id bcvCard
@@ -14,6 +15,7 @@ id bcvEuroPrice
 id bcvFechaValor
 id bcvLastUpdate
 id bcvLoader
+id bcvNotifButton
 id bcvRefreshButton
 id bcvVigencia
 id calculatorButton
@@ -29,8 +31,16 @@ id spinnerTop
 id statusText
 id swapButton
 id voiceButton
+id widgetDolarRate
+id widgetEuroRate
+id widgetLastUpdate
+id widgetRefreshButton
+id widgetRoot
 layout activity_calculator
 layout activity_main
+layout widget_dolar_rate
 string app_name
+string widget_description
 style Theme.NoVeasMiBeta
 xml device_admin
+xml dolar_widget_info

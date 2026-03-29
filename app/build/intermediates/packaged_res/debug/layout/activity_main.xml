@@ -23,7 +23,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="No Veas Mi Beta"
+        android:text="Don't look at me"
         android:textSize="28sp"
         android:textStyle="bold"
         android:textColor="#FFFFFF"

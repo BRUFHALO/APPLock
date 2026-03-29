@@ -94,6 +94,7 @@ public class MainActivity extends Activity {
             voiceButton.setEnabled(false);
             enableAdminButton.setVisibility(View.VISIBLE);
         }
+
     }
 
     private boolean isServiceRunning(Class<?> serviceClass) {

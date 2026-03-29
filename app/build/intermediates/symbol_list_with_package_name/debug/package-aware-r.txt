@@ -655,6 +655,7 @@ drawable status_background
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable widget_background
 id ALT
 id CTRL
 id FUNCTION
@@ -725,6 +726,7 @@ id bcvEuroPrice
 id bcvFechaValor
 id bcvLastUpdate
 id bcvLoader
+id bcvNotifButton
 id bcvRefreshButton
 id bcvVigencia
 id beginning
@@ -853,6 +855,11 @@ id view_tree_saved_state_registry_owner
 id view_tree_view_model_store_owner
 id visible_removing_fragment_view_tag
 id voiceButton
+id widgetDolarRate
+id widgetEuroRate
+id widgetLastUpdate
+id widgetRefreshButton
+id widgetRoot
 id withText
 id wrap_content
 integer abc_config_activityDefaultDur
@@ -908,6 +915,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+layout widget_dolar_rate
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -940,6 +948,7 @@ string app_name
 string jna_library_appname
 string search_menu_title
 string status_bar_notification_info_overflow
+string widget_description
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
@@ -1344,3 +1353,4 @@ styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewStubCompat android_id android_layout android_inflatedId
 xml device_admin
+xml dolar_widget_info

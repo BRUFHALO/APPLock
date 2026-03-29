@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">No Veas Mi Beta</string>
+    <string name="widget_description">Muestra la tasa del dólar y euro BCV en tiempo real</string>
 </resources>

@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -44,6 +46,7 @@ public class CalculatorActivity extends Activity {
     private Button swapButton;
     private Button copyTopButton;
     private Button copyBottomButton;
+    private Button bcvNotifButton;
 
     private double tasaDolar = 0;
     private double tasaEuro = 0;
@@ -110,6 +113,11 @@ public class CalculatorActivity extends Activity {
         copyTopButton.setOnClickListener(v -> copyToClipboard(inputTop.getText().toString(), "TENGO"));
         copyBottomButton.setOnClickListener(v -> copyToClipboard(inputBottom.getText().toString(), "QUIERO"));
 
+        // Botón notificación BCV
+        bcvNotifButton = findViewById(R.id.bcvNotifButton);
+        bcvNotifButton.setOnClickListener(v -> toggleBcvNotification());
+        updateBcvNotifButtonText();
+
         // Botón volver
         findViewById(R.id.backButton).setOnClickListener(v -> finish());
 
@@ -131,6 +139,7 @@ public class CalculatorActivity extends Activity {
         if (dataPortalView != null) {
             dataPortalView.startAnimation();
         }
+        updateBcvNotifButtonText();
     }
 
     private void setupSpinners() {
@@ -411,6 +420,47 @@ public class CalculatorActivity extends Activity {
         } else {
             bcvVigencia.setVisibility(View.GONE);
         }
+    }
+
+    // ========== BCV Notification ==========
+
+    private void toggleBcvNotification() {
+        boolean running = isServiceRunning(BcvNotificationService.class);
+        if (running) {
+            stopService(new Intent(this, BcvNotificationService.class));
+            Toast.makeText(this, "Notificación BCV desactivada", Toast.LENGTH_SHORT).show();
+        } else {
+            Intent intent = new Intent(this, BcvNotificationService.class);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                startForegroundService(intent);
+            } else {
+                startService(intent);
+            }
+            Toast.makeText(this, "\uD83D\uDCCA Tasa BCV visible en notificaciones", Toast.LENGTH_SHORT).show();
+        }
+        updateBcvNotifButtonText();
+    }
+
+    private void updateBcvNotifButtonText() {
+        if (bcvNotifButton == null) return;
+        boolean running = isServiceRunning(BcvNotificationService.class);
+        if (running) {
+            bcvNotifButton.setText("\u23F9 DETENER NOTIFICACIÓN BCV");
+        } else {
+            bcvNotifButton.setText("\uD83D\uDCCA TASA BCV EN NOTIFICACIÓN");
+        }
+    }
+
+    private boolean isServiceRunning(Class<?> serviceClass) {
+        android.app.ActivityManager manager = (android.app.ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+        if (manager != null) {
+            for (android.app.ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
+                if (serviceClass.getName().equals(service.service.getClassName())) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     // ========== Swap & Copy ==========

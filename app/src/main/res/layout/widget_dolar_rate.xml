@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_background"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:gravity="center"
+    android:id="@+id/widgetRoot">
+
+    <!-- Título -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tasa BCV"
+        android:textSize="10sp"
+        android:textColor="#D4AF37"
+        android:layout_marginBottom="4dp" />
+
+    <!-- Tasa del dólar -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="2dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$"
+            android:textSize="14sp"
+            android:textColor="#C9A961"
+            android:layout_marginEnd="3dp" />
+
+        <TextView
+            android:id="@+id/widgetDolarRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="---.--"
+            android:textSize="22sp"
+            android:textColor="#F2EDE4" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bs/USD"
+        android:textSize="9sp"
+        android:textColor="#8B7E6A"
+        android:layout_marginBottom="4dp" />
+
+    <!-- Tasa del euro -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="2dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="€"
+            android:textSize="12sp"
+            android:textColor="#C9A961"
+            android:layout_marginEnd="3dp" />
+
+        <TextView
+            android:id="@+id/widgetEuroRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="---.--"
+            android:textSize="15sp"
+            android:textColor="#F2EDE4" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bs/EUR"
+        android:textSize="8sp"
+        android:textColor="#8B7E6A"
+        android:layout_marginBottom="4dp" />
+
+    <!-- Separador -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#2A2A4A"
+        android:layout_marginBottom="4dp"
+        android:importantForAccessibility="no" />
+
+    <!-- Última actualización y botón refresh -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/widgetLastUpdate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Sin datos"
+            android:textSize="9sp"
+            android:textColor="#6B5D45" />
+
+        <TextView
+            android:id="@+id/widgetRefreshButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="↻"
+            android:textSize="16sp"
+            android:textColor="#C9A961"
+            android:padding="4dp" />
+    </LinearLayout>
+
+</LinearLayout>

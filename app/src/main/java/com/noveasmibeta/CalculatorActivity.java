@@ -687,32 +687,18 @@ public class CalculatorActivity extends Activity {
     // ========== Swap & Copy ==========
 
     private void swapValues() {
-        // Guardar posiciones de los spinners
+        // Guardar valores y monedas actuales
+        String topValue = inputTop.getText().toString().trim();
+        String bottomValue = inputBottom.getText().toString().trim();
         int topCurrency = spinnerTop.getSelectedItemPosition();
         int bottomCurrency = spinnerBottom.getSelectedItemPosition();
 
-        // Intercambiar monedas (spinners)
+        // Intercambiar todo: montos y monedas
         isUpdating = true;
+        inputTop.setText(bottomValue);
+        inputBottom.setText(topValue);
         spinnerTop.setSelection(bottomCurrency);
         spinnerBottom.setSelection(topCurrency);
-
-        // Convertir el valor actual del inputTop a la nueva moneda
-        String topValue = inputTop.getText().toString().trim();
-        if (!topValue.isEmpty()) {
-            try {
-                // Parsear valor considerando formato con punto de miles
-                double amount = parseFormattedNumber(topValue);
-                // Convertir a la nueva moneda
-                double result = convert(amount, bottomCurrency, topCurrency);
-                if (result >= 0) {
-                    inputBottom.setText(formatResult(result));
-                }
-            } catch (NumberFormatException e) {
-                inputBottom.setText("");
-            }
-        } else {
-            inputBottom.setText("");
-        }
         isUpdating = false;
     }
 

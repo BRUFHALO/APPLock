@@ -1,15 +1,11 @@
 [
     {
-        "merged": "com.noveasmibeta.app-merged_res-23:/layout_activity_calculator.xml.flat",
-        "source": "com.noveasmibeta.app-main-25:/layout/activity_calculator.xml"
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-merged_res-23:\\drawable_currency_button_outline.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-main-25:\\drawable\\currency_button_outline.xml"
     },
     {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-merged_res-23:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-main-25:\\mipmap-anydpi-v26\\ic_launcher.xml"
-    },
-    {
-        "merged": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-merged_res-23:\\drawable_widget_background.xml.flat",
-        "source": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-main-25:\\drawable\\widget_background.xml"
     },
     {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-merged_res-23:\\drawable_button_enable.xml.flat",
@@ -24,20 +20,20 @@
         "source": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-main-25:\\layout\\activity_calculator.xml"
     },
     {
-        "merged": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-merged_res-23:\\xml_device_admin.xml.flat",
-        "source": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-main-25:\\xml\\device_admin.xml"
-    },
-    {
-        "merged": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-merged_res-23:\\drawable_button_back_gradient.xml.flat",
-        "source": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-main-25:\\drawable\\button_back_gradient.xml"
-    },
-    {
-        "merged": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-merged_res-23:\\xml_dolar_widget_info.xml.flat",
-        "source": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-main-25:\\xml\\dolar_widget_info.xml"
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-merged_res-23:\\drawable_button_gold_outline.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-main-25:\\drawable\\button_gold_outline.xml"
     },
     {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-merged_res-23:\\drawable_bg_calculadora.png.flat",
         "source": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-main-25:\\drawable\\bg_calculadora.png"
+    },
+    {
+        "merged": "com.noveasmibeta.app-merged_res-23:/layout_widget_dolar_rate.xml.flat",
+        "source": "com.noveasmibeta.app-main-25:/layout/widget_dolar_rate.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-merged_res-23:\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-main-25:\\mipmap-mdpi\\ic_launcher.png"
     },
     {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-merged_res-23:\\drawable_button_lock.xml.flat",
@@ -52,19 +48,63 @@
         "source": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-main-25:\\layout\\activity_main.xml"
     },
     {
-        "merged": "com.noveasmibeta.app-merged_res-23:/xml_file_paths.xml.flat",
-        "source": "com.noveasmibeta.app-main-25:/xml/file_paths.xml"
-    },
-    {
-        "merged": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-merged_res-23:\\layout_widget_dolar_rate.xml.flat",
-        "source": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-main-25:\\layout\\widget_dolar_rate.xml"
-    },
-    {
-        "merged": "com.noveasmibeta.app-merged_res-23:/drawable_button_whatsapp.xml.flat",
-        "source": "com.noveasmibeta.app-main-25:/drawable/button_whatsapp.xml"
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-merged_res-23:\\drawable_card_dark_bg.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-main-25:\\drawable\\card_dark_bg.xml"
     },
     {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-merged_res-23:\\drawable_ic_launcher_foreground.xml.flat",
         "source": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-main-25:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-merged_res-23:\\drawable_swap_circle_bg.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-main-25:\\drawable\\swap_circle_bg.xml"
+    },
+    {
+        "merged": "com.noveasmibeta.app-merged_res-23:/layout_activity_calculator.xml.flat",
+        "source": "com.noveasmibeta.app-main-25:/layout/activity_calculator.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-merged_res-23:\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-main-25:\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-merged_res-23:\\drawable_widget_background.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-main-25:\\drawable\\widget_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-merged_res-23:\\xml_device_admin.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-main-25:\\xml\\device_admin.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-merged_res-23:\\drawable_button_back_gradient.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-main-25:\\drawable\\button_back_gradient.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-merged_res-23:\\xml_dolar_widget_info.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-main-25:\\xml\\dolar_widget_info.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-merged_res-23:\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-main-25:\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-merged_res-23:\\drawable_button_whatsapp.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-main-25:\\drawable\\button_whatsapp.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-merged_res-23:\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-main-25:\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-merged_res-23:\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-main-25:\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-merged_res-23:\\xml_file_paths.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-main-25:\\xml\\file_paths.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-merged_res-23:\\layout_widget_dolar_rate.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\9.0-milestone-1\\com.noveasmibeta.app-main-25:\\layout\\widget_dolar_rate.xml"
     }
 ]

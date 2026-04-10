@@ -91,6 +91,39 @@
         android:layout_marginBottom="4dp"
         android:importantForAccessibility="no" />
 
+    <!-- Tasa USDT Binance -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="2dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₮"
+            android:textSize="12sp"
+            android:textColor="#C9A961"
+            android:layout_marginEnd="3dp" />
+
+        <TextView
+            android:id="@+id/widgetUsdtRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="---.--"
+            android:textSize="15sp"
+            android:textColor="#F2EDE4" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bs/USDT"
+        android:textSize="8sp"
+        android:textColor="#8B7E6A"
+        android:layout_marginBottom="4dp" />
+
     <!-- Última actualización y botón refresh -->
     <LinearLayout
         android:layout_width="match_parent"

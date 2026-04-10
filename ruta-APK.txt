@@ -1,0 +1,2 @@
+C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\build\outputs\apk\debug\
+comando para complilar APK: .\gradlew assembleDebug

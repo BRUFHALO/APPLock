@@ -41,6 +41,14 @@ public class CalculatorActivity extends Activity {
     private BcvScraper bcvScraper;
     private Handler mainHandler;
 
+    // Binance UI
+    private TextView binancePrice;
+    private TextView binanceLastUpdate;
+    private TextView binanceCacheIndicator;
+    private Button binanceRefreshButton;
+    private ProgressBar binanceLoader;
+    private BinanceScraper binanceScraper;
+
     // Data Portal Animation
     private DataPortalView dataPortalView;
 
@@ -48,7 +56,6 @@ public class CalculatorActivity extends Activity {
     private Button swapButton;
     private Button copyTopButton;
     private Button copyBottomButton;
-    private Button bcvNotifButton;
     private Button shareWhatsappButton;
     private Button changeQrButton;
 
@@ -59,13 +66,15 @@ public class CalculatorActivity extends Activity {
 
     private double tasaDolar = 0;
     private double tasaEuro = 0;
+    private double tasaUSDT = 0; // Tasa Binance P2P
 
     private boolean isUpdating = false;
 
-    private static final String[] CURRENCIES = {"$ USD", "€ EUR", "Bs VES"};
+    private static final String[] CURRENCIES = {"$ USD", "€ EUR", "Bs VES", "₮ USDT"};
     private static final int USD = 0;
     private static final int EUR = 1;
     private static final int VES = 2;
+    private static final int USDT = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,6 +104,14 @@ public class CalculatorActivity extends Activity {
         mainHandler = new Handler(Looper.getMainLooper());
         bcvScraper = new BcvScraper(this);
 
+        // Binance UI References
+        binancePrice = findViewById(R.id.binancePrice);
+        binanceLastUpdate = findViewById(R.id.binanceLastUpdate);
+        binanceCacheIndicator = findViewById(R.id.binanceCacheIndicator);
+        binanceRefreshButton = findViewById(R.id.binanceRefreshButton);
+        binanceLoader = findViewById(R.id.binanceLoader);
+        binanceScraper = new BinanceScraper(this);
+
         // Inicializar Data Portal View
         dataPortalView = findViewById(R.id.dataPortalView);
         if (dataPortalView != null) {
@@ -115,17 +132,15 @@ public class CalculatorActivity extends Activity {
         // BCV refresh button
         bcvRefreshButton.setOnClickListener(v -> fetchBcvData());
 
+        // Binance refresh button
+        binanceRefreshButton.setOnClickListener(v -> fetchBinanceData());
+
         // Botón swap: intercambiar valores
         swapButton.setOnClickListener(v -> swapValues());
 
         // Botones de copiar
         copyTopButton.setOnClickListener(v -> copyToClipboard(inputTop.getText().toString(), "TENGO"));
         copyBottomButton.setOnClickListener(v -> copyToClipboard(inputBottom.getText().toString(), "QUIERO"));
-
-        // Botón notificación BCV
-        bcvNotifButton = findViewById(R.id.bcvNotifButton);
-        bcvNotifButton.setOnClickListener(v -> toggleBcvNotification());
-        updateBcvNotifButtonText();
 
         // Botones de compartir
         shareHelper = new PaymentShareHelper(this);
@@ -156,7 +171,6 @@ public class CalculatorActivity extends Activity {
         if (dataPortalView != null) {
             dataPortalView.startAnimation();
         }
-        updateBcvNotifButtonText();
     }
 
     private void setupSpinners() {
@@ -165,8 +179,9 @@ public class CalculatorActivity extends Activity {
             public View getView(int position, View convertView, ViewGroup parent) {
                 View view = super.getView(position, convertView, parent);
                 TextView tv = (TextView) view;
-                tv.setTextColor(0xFF2C2416);
-                tv.setTextSize(15);
+                tv.setTextColor(0xFFE6C163);
+                tv.setTextSize(14);
+                tv.setGravity(android.view.Gravity.CENTER);
                 return view;
             }
 
@@ -174,9 +189,10 @@ public class CalculatorActivity extends Activity {
             public View getDropDownView(int position, View convertView, ViewGroup parent) {
                 View view = super.getDropDownView(position, convertView, parent);
                 TextView tv = (TextView) view;
-                tv.setTextColor(0xFF2C2416);
-                tv.setTextSize(15);
-                tv.setPadding(20, 16, 20, 16);
+                tv.setTextColor(0xFFE6C163);
+                tv.setTextSize(14);
+                tv.setPadding(24, 16, 24, 16);
+                tv.setBackgroundColor(0xFF2D2F3C);
                 return view;
             }
         };
@@ -246,7 +262,7 @@ public class CalculatorActivity extends Activity {
                 return;
             }
 
-            double amount = Double.parseDouble(text);
+            double amount = parseFormattedNumber(text);
             int fromCurrency = spinnerTop.getSelectedItemPosition();
             int toCurrency = spinnerBottom.getSelectedItemPosition();
 
@@ -274,7 +290,7 @@ public class CalculatorActivity extends Activity {
                 return;
             }
 
-            double amount = Double.parseDouble(text);
+            double amount = parseFormattedNumber(text);
             int fromCurrency = spinnerBottom.getSelectedItemPosition();
             int toCurrency = spinnerTop.getSelectedItemPosition();
 
@@ -303,6 +319,11 @@ public class CalculatorActivity extends Activity {
             case EUR:
                 amountInVes = amount * tasaEuro;
                 break;
+            case USDT:
+                // USDT usa la tasa de Binance
+                if (tasaUSDT <= 0) return -1;
+                amountInVes = amount * tasaUSDT;
+                break;
             case VES:
             default:
                 amountInVes = amount;
@@ -315,6 +336,9 @@ public class CalculatorActivity extends Activity {
                 return amountInVes / tasaDolar;
             case EUR:
                 return amountInVes / tasaEuro;
+            case USDT:
+                if (tasaUSDT <= 0) return -1;
+                return amountInVes / tasaUSDT;
             case VES:
             default:
                 return amountInVes;
@@ -322,13 +346,41 @@ public class CalculatorActivity extends Activity {
     }
 
     private String formatResult(double value) {
-        if (value == Math.floor(value) && value < 1000000) {
-            return String.format("%.0f", value);
-        } else if (value >= 1000) {
-            return String.format("%.2f", value);
+        // Formato: separador de miles con punto, decimales con coma
+        // Ejemplo: 10.000,50
+        if (value == Math.floor(value)) {
+            // Sin decimales
+            return formatWithThousandsSeparator((long) value);
         } else {
-            return String.format("%.4f", value);
+            // Con decimales
+            long integerPart = (long) value;
+            int decimalPart = (int) Math.round((value - integerPart) * 100);
+            if (decimalPart >= 100) {
+                decimalPart -= 100;
+                integerPart++;
+            }
+            return formatWithThousandsSeparator(integerPart) + "," + String.format("%02d", decimalPart);
         }
+    }
+
+    private String formatWithThousandsSeparator(long value) {
+        StringBuilder result = new StringBuilder();
+        String str = String.valueOf(Math.abs(value));
+        int count = 0;
+
+        for (int i = str.length() - 1; i >= 0; i--) {
+            if (count > 0 && count % 3 == 0) {
+                result.insert(0, ".");
+            }
+            result.insert(0, str.charAt(i));
+            count++;
+        }
+
+        if (value < 0) {
+            result.insert(0, "-");
+        }
+
+        return result.toString();
     }
 
     // ========== BCV Scraper ==========
@@ -337,17 +389,20 @@ public class CalculatorActivity extends Activity {
         // Actualizar card BCV si hay tasas
         if (tasaDolar > 0) {
             bcvDolarPrice.setText(String.format("%.2f", tasaDolar));
-            bcvDolarPrice.setTextColor(0xFF2C2416);
+            bcvDolarPrice.setTextColor(0xFFEDEDED);
         }
         if (tasaEuro > 0) {
             bcvEuroPrice.setText(String.format("%.2f", tasaEuro));
-            bcvEuroPrice.setTextColor(0xFF2C2416);
+            bcvEuroPrice.setTextColor(0xFFEDEDED);
         }
 
         // Si no hay tasas, cargar desde BCV
         if (tasaDolar <= 0 || tasaEuro <= 0) {
             fetchBcvData();
         }
+
+        // Siempre cargar tasa Binance (con caché de 8 min)
+        fetchBinanceData();
     }
 
     private void fetchBcvData() {
@@ -402,18 +457,18 @@ public class CalculatorActivity extends Activity {
         // Actualizar card BCV (solo 2 decimales)
         if (data.dolar > 0) {
             bcvDolarPrice.setText(String.format("%.2f", data.dolar));
-            bcvDolarPrice.setTextColor(0xFF2C2416);
+            bcvDolarPrice.setTextColor(0xFFEDEDED);
         } else {
             bcvDolarPrice.setText("N/A");
-            bcvDolarPrice.setTextColor(0xFF8B7E6A);
+            bcvDolarPrice.setTextColor(0xFFA89060);
         }
 
         if (data.euro > 0) {
             bcvEuroPrice.setText(String.format("%.2f", data.euro));
-            bcvEuroPrice.setTextColor(0xFF2C2416);
+            bcvEuroPrice.setTextColor(0xFFEDEDED);
         } else {
             bcvEuroPrice.setText("N/A");
-            bcvEuroPrice.setTextColor(0xFF8B7E6A);
+            bcvEuroPrice.setTextColor(0xFFA89060);
         }
 
         // Fecha valor
@@ -425,6 +480,7 @@ public class CalculatorActivity extends Activity {
         // Indicador de caché
         if (data.isCache) {
             bcvCacheIndicator.setText("📦 Dato en caché");
+            bcvCacheIndicator.setTextColor(0xFFD4AF37);
             bcvCacheIndicator.setVisibility(View.VISIBLE);
         } else {
             bcvCacheIndicator.setVisibility(View.GONE);
@@ -436,6 +492,74 @@ public class CalculatorActivity extends Activity {
             bcvVigencia.setVisibility(View.VISIBLE);
         } else {
             bcvVigencia.setVisibility(View.GONE);
+        }
+    }
+
+    // ========== Binance Scraper ==========
+
+    private void fetchBinanceData() {
+        // Mostrar loader y deshabilitar botón
+        binanceRefreshButton.setEnabled(false);
+        binanceRefreshButton.setVisibility(View.INVISIBLE);
+        binanceLoader.setVisibility(View.VISIBLE);
+        binancePrice.setText("...");
+
+        binanceScraper.fetchUsdtVesPrice(new BinanceScraper.BinanceCallback() {
+            @Override
+            public void onSuccess(BinanceScraper.BinanceData data) {
+                mainHandler.post(() -> {
+                    updateBinanceUI(data);
+                    hideBinanceLoader();
+                });
+            }
+
+            @Override
+            public void onError(String error, BinanceScraper.BinanceData cachedData) {
+                mainHandler.post(() -> {
+                    if (cachedData != null) {
+                        updateBinanceUI(cachedData);
+                        Toast.makeText(CalculatorActivity.this, error + " (mostrando caché)", Toast.LENGTH_SHORT).show();
+                    } else {
+                        binancePrice.setText("---");
+                        binancePrice.setTextColor(0xFFFF5252);
+                        binanceLastUpdate.setText("🕓 " + error);
+                        Toast.makeText(CalculatorActivity.this, error, Toast.LENGTH_LONG).show();
+                    }
+                    hideBinanceLoader();
+                });
+            }
+        });
+    }
+
+    private void hideBinanceLoader() {
+        binanceLoader.setVisibility(View.GONE);
+        binanceRefreshButton.setVisibility(View.VISIBLE);
+        binanceRefreshButton.setEnabled(true);
+    }
+
+    private void updateBinanceUI(BinanceScraper.BinanceData data) {
+        // Actualizar tasa local para la conversión
+        tasaUSDT = data.price;
+
+        // Actualizar card Binance
+        if (data.price > 0) {
+            binancePrice.setText(data.priceStr + " Bs/USDT");
+            binancePrice.setTextColor(0xFFEDEDED);
+        } else {
+            binancePrice.setText("N/A");
+            binancePrice.setTextColor(0xFFA89060);
+        }
+
+        // Última consulta
+        binanceLastUpdate.setText("🕓 Última consulta: " + data.lastUpdate);
+
+        // Indicador de caché
+        if (data.isCache) {
+            binanceCacheIndicator.setText("📦 Dato en caché");
+            binanceCacheIndicator.setTextColor(0xFFD4AF37);
+            binanceCacheIndicator.setVisibility(View.VISIBLE);
+        } else {
+            binanceCacheIndicator.setVisibility(View.GONE);
         }
     }
 
@@ -454,17 +578,6 @@ public class CalculatorActivity extends Activity {
                 startService(intent);
             }
             Toast.makeText(this, "\uD83D\uDCCA Tasa BCV visible en notificaciones", Toast.LENGTH_SHORT).show();
-        }
-        updateBcvNotifButtonText();
-    }
-
-    private void updateBcvNotifButtonText() {
-        if (bcvNotifButton == null) return;
-        boolean running = isServiceRunning(BcvNotificationService.class);
-        if (running) {
-            bcvNotifButton.setText("\u23F9 DETENER NOTIFICACIÓN BCV");
-        } else {
-            bcvNotifButton.setText("\uD83D\uDCCA TASA BCV EN NOTIFICACIÓN");
         }
     }
 
@@ -500,7 +613,15 @@ public class CalculatorActivity extends Activity {
         String currencyTop = CURRENCIES[spinnerTop.getSelectedItemPosition()];
         String currencyBottom = CURRENCIES[spinnerBottom.getSelectedItemPosition()];
 
-        shareHelper.generateAndShare(montoTop, currencyTop, montoBottom, currencyBottom, tasaDolar);
+        // Determinar qué tasa usar: si hay USDT seleccionado, usar Binance
+        int topPos = spinnerTop.getSelectedItemPosition();
+        int bottomPos = spinnerBottom.getSelectedItemPosition();
+        boolean hasUsdt = (topPos == USDT || bottomPos == USDT);
+
+        double tasaToUse = hasUsdt ? tasaUSDT : tasaDolar;
+        String tasaLabel = hasUsdt ? "Tasa Binance" : "Tasa BCV";
+
+        shareHelper.generateAndShare(montoTop, currencyTop, montoBottom, currencyBottom, tasaToUse, tasaLabel);
     }
 
     private void pickQrImage() {
@@ -566,22 +687,39 @@ public class CalculatorActivity extends Activity {
     // ========== Swap & Copy ==========
 
     private void swapValues() {
-        // Guardar valores actuales
-        String topValue = inputTop.getText().toString();
-        String bottomValue = inputBottom.getText().toString();
+        // Guardar posiciones de los spinners
         int topCurrency = spinnerTop.getSelectedItemPosition();
         int bottomCurrency = spinnerBottom.getSelectedItemPosition();
 
-        // Intercambiar valores
+        // Intercambiar monedas (spinners)
         isUpdating = true;
-        inputTop.setText(bottomValue);
-        inputBottom.setText(topValue);
         spinnerTop.setSelection(bottomCurrency);
         spinnerBottom.setSelection(topCurrency);
-        isUpdating = false;
 
-        // Forzar recálculo
-        convertFromTop();
+        // Convertir el valor actual del inputTop a la nueva moneda
+        String topValue = inputTop.getText().toString().trim();
+        if (!topValue.isEmpty()) {
+            try {
+                // Parsear valor considerando formato con punto de miles
+                double amount = parseFormattedNumber(topValue);
+                // Convertir a la nueva moneda
+                double result = convert(amount, bottomCurrency, topCurrency);
+                if (result >= 0) {
+                    inputBottom.setText(formatResult(result));
+                }
+            } catch (NumberFormatException e) {
+                inputBottom.setText("");
+            }
+        } else {
+            inputBottom.setText("");
+        }
+        isUpdating = false;
+    }
+
+    private double parseFormattedNumber(String formatted) {
+        // Quitar puntos de miles y reemplazar coma decimal por punto
+        String normalized = formatted.replace(".", "").replace(",", ".");
+        return Double.parseDouble(normalized);
     }
 
     private void copyToClipboard(String value, String label) {
@@ -601,6 +739,9 @@ public class CalculatorActivity extends Activity {
         super.onDestroy();
         if (bcvScraper != null) {
             bcvScraper.destroy();
+        }
+        if (binanceScraper != null) {
+            binanceScraper.destroy();
         }
     }
 }

@@ -87,16 +87,18 @@ public class PaymentShareHelper {
      */
     public void generateAndShare(String montoTop, String currencyTop,
                                   String montoBottom, String currencyBottom,
-                                  double tasaDolar) {
+                                  double tasa, String tasaLabel) {
         try {
+            // Cargar QR guardado
             Bitmap qrBitmap = loadSavedQr();
             if (qrBitmap == null) {
-                Toast.makeText(context, "No se encontró el QR guardado", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "No se encontró imagen QR guardada", Toast.LENGTH_SHORT).show();
                 return;
             }
 
+            // Crear imagen compuesta
             Bitmap compositeImage = createCompositeImage(qrBitmap, montoTop, currencyTop,
-                    montoBottom, currencyBottom, tasaDolar);
+                    montoBottom, currencyBottom, tasa, tasaLabel);
             qrBitmap.recycle();
 
             if (compositeImage == null) {
@@ -144,9 +146,9 @@ public class PaymentShareHelper {
      */
     private Bitmap createCompositeImage(Bitmap qrBitmap, String montoTop, String currencyTop,
                                          String montoBottom, String currencyBottom,
-                                         double tasaDolar) {
+                                         double tasa, String tasaLabel) {
         int width = 800;
-        int qrSize = 400;
+        int qrSize = 500;
         int padding = 40;
 
         // Calcular altura dinámica
@@ -220,42 +222,33 @@ public class PaymentShareHelper {
         y += 20;
 
         // === MONTOS ===
-        // Monto superior (TENGO)
-        Paint labelPaint = new Paint();
-        labelPaint.setColor(Color.parseColor("#8B8B8B"));
-        labelPaint.setTextSize(18);
-        labelPaint.setTypeface(Typeface.create("sans-serif", Typeface.NORMAL));
-        labelPaint.setAntiAlias(true);
-
         Paint amountPaint = new Paint();
         amountPaint.setColor(Color.WHITE);
         amountPaint.setTextSize(36);
         amountPaint.setTypeface(Typeface.create("sans-serif-light", Typeface.BOLD));
         amountPaint.setAntiAlias(true);
 
-        // Monto TENGO
-        canvas.drawText("TENGO", padding + 10, y + 20, labelPaint);
-        String tengoText = getCurrencySymbol(currencyTop) + " " + montoTop + " " + currencyTop;
-        canvas.drawText(tengoText, padding + 10, y + 60, amountPaint);
+        // Monto superior
+        String tengoText = getCurrencySymbol(currencyTop) + " " + montoTop + " " + getCurrencyCode(currencyTop);
+        canvas.drawText(tengoText, padding + 10, y + 40, amountPaint);
 
-        y += 80;
+        y += 60;
 
-        // Monto QUIERO
-        canvas.drawText("QUIERO", padding + 10, y + 20, labelPaint);
-        String quieroText = getCurrencySymbol(currencyBottom) + " " + montoBottom + " " + currencyBottom;
-        canvas.drawText(quieroText, padding + 10, y + 60, amountPaint);
+        // Monto inferior
+        String quieroText = getCurrencySymbol(currencyBottom) + " " + montoBottom + " " + getCurrencyCode(currencyBottom);
+        canvas.drawText(quieroText, padding + 10, y + 40, amountPaint);
 
-        y += 80;
+        y += 60;
 
-        // Tasa BCV
-        if (tasaDolar > 0) {
+        // Tasa (BCV o Binance)
+        if (tasa > 0) {
             Paint tasaPaint = new Paint();
             tasaPaint.setColor(Color.parseColor("#C9A961"));
             tasaPaint.setTextSize(20);
             tasaPaint.setTextAlign(Paint.Align.CENTER);
             tasaPaint.setAntiAlias(true);
-            canvas.drawText("Tasa BCV: " + String.format("%.2f", tasaDolar) + " Bs/$",
-                    width / 2f, y + 20, tasaPaint);
+            String tasaText = tasaLabel + ": " + String.format("%.2f", tasa) + " Bs/$";
+            canvas.drawText(tasaText, width / 2f, y + 20, tasaPaint);
         }
 
         // === FOOTER ===
@@ -272,9 +265,18 @@ public class PaymentShareHelper {
     }
 
     private String getCurrencySymbol(String currency) {
+        if (currency.contains("USDT")) return "₮";
         if (currency.contains("USD")) return "$";
         if (currency.contains("EUR")) return "€";
         if (currency.contains("VES")) return "Bs.";
+        return "";
+    }
+
+    private String getCurrencyCode(String currency) {
+        if (currency.contains("USDT")) return "USDT";
+        if (currency.contains("USD")) return "USD";
+        if (currency.contains("EUR")) return "EUR";
+        if (currency.contains("VES")) return "VES";
         return "";
     }
 }

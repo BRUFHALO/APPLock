@@ -1,14 +1,27 @@
 R_DEF: Internal format may change without notice
 local
+color bg_main
+color card_bg
+color gold_bright
+color gold_main
+color gold_muted
+color gold_warm
 color ic_launcher_background
+color separator_dark
+color text_muted_gold
+color text_offwhite
 drawable bg_calculadora
 drawable button_back_gradient
 drawable button_enable
+drawable button_gold_outline
 drawable button_lock
 drawable button_voice
 drawable button_whatsapp
+drawable card_dark_bg
+drawable currency_button_outline
 drawable ic_launcher_foreground
 drawable status_background
+drawable swap_circle_bg
 drawable widget_background
 id backButton
 id bcvCacheIndicator
@@ -18,9 +31,15 @@ id bcvEuroPrice
 id bcvFechaValor
 id bcvLastUpdate
 id bcvLoader
-id bcvNotifButton
 id bcvRefreshButton
 id bcvVigencia
+id binanceCacheIndicator
+id binanceCard
+id binanceLastUpdate
+id binanceLoader
+id binancePrice
+id binanceRefreshButton
+id binanceValorAprox
 id calculatorButton
 id changeQrButton
 id copyBottomButton
@@ -41,6 +60,7 @@ id widgetEuroRate
 id widgetLastUpdate
 id widgetRefreshButton
 id widgetRoot
+id widgetUsdtRate
 layout activity_calculator
 layout activity_main
 layout widget_dolar_rate

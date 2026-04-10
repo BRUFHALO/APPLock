@@ -16,9 +16,9 @@ public class DataPortalView extends View {
     private Paint linePaint;
     private Random random;
     private boolean isAnimating = false;
-    private static final int PARTICLE_COUNT = 28;
-    private static final float CONNECTION_DISTANCE = 300f;
-    private static final float PARTICLE_SPEED = 0.3f;
+    private static final int PARTICLE_COUNT = 35;
+    private static final float CONNECTION_DISTANCE = 350f;
+    private static final float PARTICLE_SPEED = 0.35f;
 
     public DataPortalView(Context context) {
         super(context);
@@ -35,12 +35,12 @@ public class DataPortalView extends View {
         particles = new ArrayList<>();
 
         particlePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        particlePaint.setColor(0x33D5CAA3);
+        particlePaint.setColor(0x55D5CAA3);
         particlePaint.setStyle(Paint.Style.FILL);
 
         linePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        linePaint.setColor(0x1AD5CAA3);
-        linePaint.setStrokeWidth(1f);
+        linePaint.setColor(0x30D5CAA3);
+        linePaint.setStrokeWidth(1.8f);
         linePaint.setStyle(Paint.Style.STROKE);
     }
 
@@ -58,7 +58,7 @@ public class DataPortalView extends View {
                 random.nextFloat() * height,
                 (random.nextFloat() - 0.5f) * PARTICLE_SPEED,
                 (random.nextFloat() - 0.5f) * PARTICLE_SPEED,
-                2f + random.nextFloat() * 2f
+                3f + random.nextFloat() * 3.5f
             ));
         }
     }

@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="ic_launcher_background">#121226</color>
-    <string name="app_name">No Veas Mi Beta</string>
+    <color name="bg_main">#0F1223</color>
+    <color name="card_bg">#2D2F3C</color>
+    <color name="gold_bright">#E6C163</color>
+    <color name="gold_main">#D4AF37</color>
+    <color name="gold_muted">#A89060</color>
+    <color name="gold_warm">#C5A059</color>
+    <color name="ic_launcher_background">#1a2332</color>
+    <color name="separator_dark">#3A3C4A</color>
+    <color name="text_muted_gold">#B0A080</color>
+    <color name="text_offwhite">#EDEDED</color>
+    <string name="app_name">Don\'t look at me</string>
     <string name="gcm_defaultSenderId" translatable="false">751447288021</string>
     <string name="google_api_key" translatable="false">AIzaSyAh3jXLiKDoEUb-awRSGODSMoFUKkJzGHA</string>
     <string name="google_app_id" translatable="false">1:751447288021:android:a960742eb354da44091a5c</string>

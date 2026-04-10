@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="ic_launcher_background">#121226</color>
+    <color name="ic_launcher_background">#1a2332</color>
+    <color name="bg_main">#0F1223</color>
+    <color name="card_bg">#2D2F3C</color>
+    <color name="gold_main">#D4AF37</color>
+    <color name="gold_bright">#E6C163</color>
+    <color name="gold_muted">#A89060</color>
+    <color name="gold_warm">#C5A059</color>
+    <color name="text_offwhite">#EDEDED</color>
+    <color name="text_muted_gold">#B0A080</color>
+    <color name="separator_dark">#3A3C4A</color>
 </resources>

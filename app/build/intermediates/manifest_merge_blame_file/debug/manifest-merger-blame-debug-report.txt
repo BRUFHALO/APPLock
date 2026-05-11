@@ -9,248 +9,248 @@
 9        android:targetSdkVersion="34" />
 10
 11    <uses-permission android:name="android.permission.BIND_DEVICE_ADMIN" />
-11-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:5:5-76
-11-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:5:22-73
+11-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:5:5-76
+11-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:5:22-73
 12    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-12-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:6:5-71
-12-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:6:22-68
+12-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:6:5-71
+12-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:6:22-68
 13    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-13-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:7:5-77
-13-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:7:22-74
+13-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:7:5-77
+13-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:7:22-74
 14    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
-14-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:8:5-88
-14-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:8:22-85
+14-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:8:5-88
+14-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:8:22-85
 15    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-15-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:9:5-77
-15-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:9:22-74
+15-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:9:5-77
+15-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:9:22-74
 16    <uses-permission android:name="android.permission.INTERNET" />
-16-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:10:5-67
-16-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:10:22-64
+16-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:10:5-67
+16-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:10:22-64
 17    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-17-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:11:5-79
-17-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:11:22-76
+17-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:11:5-79
+17-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:11:22-76
 18    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-18-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:12:5-76
-18-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:12:22-73
+18-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:12:5-76
+18-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:12:22-73
 19    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-19-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:13:5-81
-19-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:13:22-78
+19-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:13:5-81
+19-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:13:22-78
 20    <uses-permission android:name="android.permission.WAKE_LOCK" />
-20-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:14:5-68
-20-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:14:22-65
+20-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:14:5-68
+20-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:14:22-65
 21    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
-21-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:15:5-95
-21-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:15:22-92
+21-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:15:5-95
+21-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:15:22-92
 22    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
-22-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:16:5-87
-22-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:16:22-84
+22-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:16:5-87
+22-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:16:22-84
 23    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
-23-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:17:5-76
-23-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:17:22-73
+23-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:17:5-76
+23-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:17:22-73
 24    <uses-permission
-24-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:18:5-107
+24-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:18:5-107
 25        android:name="android.permission.READ_EXTERNAL_STORAGE"
-25-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:18:22-77
+25-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:18:22-77
 26        android:maxSdkVersion="32" />
-26-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:18:78-104
+26-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:18:78-104
 27
 28    <permission
-28-->[androidx.core:core:1.9.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\24a40acf92d9395fe89e5f821fb431ef\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+28-->[androidx.core:core:1.9.0] /home/ronaldorivero/.gradle/caches/9.0-milestone-1/transforms/24a40acf92d9395fe89e5f821fb431ef/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
 29        android:name="com.noveasmibeta.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-29-->[androidx.core:core:1.9.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\24a40acf92d9395fe89e5f821fb431ef\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+29-->[androidx.core:core:1.9.0] /home/ronaldorivero/.gradle/caches/9.0-milestone-1/transforms/24a40acf92d9395fe89e5f821fb431ef/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
 30        android:protectionLevel="signature" />
-30-->[androidx.core:core:1.9.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\24a40acf92d9395fe89e5f821fb431ef\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+30-->[androidx.core:core:1.9.0] /home/ronaldorivero/.gradle/caches/9.0-milestone-1/transforms/24a40acf92d9395fe89e5f821fb431ef/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
 31
 32    <uses-permission android:name="com.noveasmibeta.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-32-->[androidx.core:core:1.9.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\24a40acf92d9395fe89e5f821fb431ef\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
-32-->[androidx.core:core:1.9.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\24a40acf92d9395fe89e5f821fb431ef\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+32-->[androidx.core:core:1.9.0] /home/ronaldorivero/.gradle/caches/9.0-milestone-1/transforms/24a40acf92d9395fe89e5f821fb431ef/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
+32-->[androidx.core:core:1.9.0] /home/ronaldorivero/.gradle/caches/9.0-milestone-1/transforms/24a40acf92d9395fe89e5f821fb431ef/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
 33
 34    <application
-34-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:20:5-108:19
+34-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:20:5-108:19
 35        android:allowBackup="true"
-35-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:21:9-35
+35-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:21:9-35
 36        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-36-->[androidx.core:core:1.9.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\24a40acf92d9395fe89e5f821fb431ef\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+36-->[androidx.core:core:1.9.0] /home/ronaldorivero/.gradle/caches/9.0-milestone-1/transforms/24a40acf92d9395fe89e5f821fb431ef/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
 37        android:debuggable="true"
 38        android:extractNativeLibs="false"
 39        android:icon="@mipmap/ic_launcher"
-39-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:22:9-43
+39-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:22:9-43
 40        android:label="@string/app_name"
-40-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:23:9-41
+40-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:23:9-41
 41        android:supportsRtl="true"
-41-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:24:9-35
+41-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:24:9-35
 42        android:theme="@style/Theme.NoVeasMiBeta" >
-42-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:25:9-50
+42-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:25:9-50
 43        <activity
-43-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:27:9-34:20
+43-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:27:9-34:20
 44            android:name="com.noveasmibeta.MainActivity"
-44-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:28:13-41
+44-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:28:13-41
 45            android:exported="true" >
-45-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:29:13-36
+45-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:29:13-36
 46            <intent-filter>
-46-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:30:13-33:29
+46-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:30:13-33:29
 47                <action android:name="android.intent.action.MAIN" />
-47-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:31:17-69
-47-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:31:25-66
+47-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:31:17-69
+47-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:31:25-66
 48
 49                <category android:name="android.intent.category.LAUNCHER" />
-49-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:32:17-77
-49-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:32:27-74
+49-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:32:17-77
+49-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:32:27-74
 50            </intent-filter>
 51        </activity>
 52        <activity
-52-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:36:9-39:57
+52-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:36:9-39:57
 53            android:name="com.noveasmibeta.CalculatorActivity"
-53-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:37:13-47
+53-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:37:13-47
 54            android:exported="false"
-54-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:38:13-37
+54-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:38:13-37
 55            android:theme="@style/Theme.NoVeasMiBeta" />
-55-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:39:13-54
+55-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:39:13-54
 56
 57        <service
-57-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:41:9-45:58
+57-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:41:9-45:58
 58            android:name="com.noveasmibeta.VoiceListenerService"
-58-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:42:13-49
+58-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:42:13-49
 59            android:enabled="true"
-59-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:43:13-35
+59-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:43:13-35
 60            android:exported="false"
-60-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:44:13-37
+60-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:44:13-37
 61            android:foregroundServiceType="microphone" />
-61-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:45:13-55
+61-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:45:13-55
 62        <service
-62-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:47:9-51:58
+62-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:47:9-51:58
 63            android:name="com.noveasmibeta.VoskVoiceService"
-63-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:48:13-45
+63-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:48:13-45
 64            android:enabled="true"
-64-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:49:13-35
+64-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:49:13-35
 65            android:exported="false"
-65-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:50:13-37
+65-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:50:13-37
 66            android:foregroundServiceType="microphone" />
-66-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:51:13-55
+66-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:51:13-55
 67        <service
-67-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:53:9-57:58
+67-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:53:9-57:58
 68            android:name="com.noveasmibeta.GoogleVoiceService"
-68-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:54:13-47
+68-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:54:13-47
 69            android:enabled="true"
-69-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:55:13-35
+69-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:55:13-35
 70            android:exported="false"
-70-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:56:13-37
+70-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:56:13-37
 71            android:foregroundServiceType="microphone" />
-71-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:57:13-55
+71-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:57:13-55
 72        <service
-72-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:59:9-63:56
+72-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:59:9-63:56
 73            android:name="com.noveasmibeta.BcvNotificationService"
-73-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:60:13-51
+73-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:60:13-51
 74            android:enabled="true"
-74-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:61:13-35
+74-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:61:13-35
 75            android:exported="false"
-75-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:62:13-37
+75-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:62:13-37
 76            android:foregroundServiceType="dataSync" />
-76-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:63:13-53
+76-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:63:13-53
 77
 78        <receiver
-78-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:65:9-75:20
+78-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:65:9-75:20
 79            android:name="com.noveasmibeta.AdminReceiver"
-79-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:66:13-42
+79-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:66:13-42
 80            android:exported="true"
-80-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:68:13-36
+80-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:68:13-36
 81            android:permission="android.permission.BIND_DEVICE_ADMIN" >
-81-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:67:13-70
+81-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:67:13-70
 82            <meta-data
-82-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:69:13-71:56
+82-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:69:13-71:56
 83                android:name="android.app.device_admin"
-83-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:70:17-56
+83-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:70:17-56
 84                android:resource="@xml/device_admin" />
-84-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:71:17-53
+84-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:71:17-53
 85
 86            <intent-filter>
-86-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:72:13-74:29
+86-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:72:13-74:29
 87                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
-87-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:73:17-82
-87-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:73:25-79
+87-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:73:17-82
+87-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:73:25-79
 88            </intent-filter>
 89        </receiver>
 90        <receiver
-90-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:77:9-87:20
+90-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:77:9-87:20
 91            android:name="com.noveasmibeta.DolarRateWidget"
-91-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:78:13-44
+91-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:78:13-44
 92            android:exported="true" >
-92-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:79:13-36
+92-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:79:13-36
 93            <intent-filter>
-93-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:80:13-83:29
+93-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:80:13-83:29
 94                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-94-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:81:17-84
-94-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:81:25-81
+94-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:81:17-84
+94-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:81:25-81
 95                <action android:name="com.noveasmibeta.WIDGET_REFRESH" />
-95-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:82:17-74
-95-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:82:25-71
+95-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:82:17-74
+95-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:82:25-71
 96            </intent-filter>
 97
 98            <meta-data
-98-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:84:13-86:61
+98-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:84:13-86:61
 99                android:name="android.appwidget.provider"
-99-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:85:17-58
+99-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:85:17-58
 100                android:resource="@xml/dolar_widget_info" />
-100-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:86:17-58
+100-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:86:17-58
 101        </receiver>
 102
 103        <provider
-103-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:89:9-97:20
+103-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:89:9-97:20
 104            android:name="androidx.core.content.FileProvider"
-104-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:90:13-62
+104-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:90:13-62
 105            android:authorities="com.noveasmibeta.fileprovider"
-105-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:91:13-64
+105-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:91:13-64
 106            android:exported="false"
-106-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:92:13-37
+106-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:92:13-37
 107            android:grantUriPermissions="true" >
-107-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:93:13-47
+107-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:93:13-47
 108            <meta-data
-108-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:94:13-96:54
+108-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:94:13-96:54
 109                android:name="android.support.FILE_PROVIDER_PATHS"
-109-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:95:17-67
+109-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:95:17-67
 110                android:resource="@xml/file_paths" />
-110-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:96:17-51
+110-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:96:17-51
 111        </provider>
 112
 113        <receiver
-113-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:99:9-107:20
+113-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:99:9-107:20
 114            android:name="com.noveasmibeta.BootReceiver"
-114-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:100:13-41
+114-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:100:13-41
 115            android:enabled="true"
-115-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:101:13-35
+115-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:101:13-35
 116            android:exported="true" >
-116-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:102:13-36
+116-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:102:13-36
 117            <intent-filter>
-117-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:103:13-106:29
+117-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:103:13-106:29
 118                <action android:name="android.intent.action.BOOT_COMPLETED" />
-118-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:104:17-79
-118-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:104:25-76
+118-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:104:17-79
+118-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:104:25-76
 119                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
-119-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:105:17-82
-119-->C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\src\main\AndroidManifest.xml:105:25-79
+119-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:105:17-82
+119-->/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/src/main/AndroidManifest.xml:105:25-79
 120            </intent-filter>
 121        </receiver>
 122
 123        <provider
-123-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\2c0fa18e0f12aee7e66645bc04a036f4\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+123-->[androidx.emoji2:emoji2:1.2.0] /home/ronaldorivero/.gradle/caches/9.0-milestone-1/transforms/2c0fa18e0f12aee7e66645bc04a036f4/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
 124            android:name="androidx.startup.InitializationProvider"
-124-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\2c0fa18e0f12aee7e66645bc04a036f4\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+124-->[androidx.emoji2:emoji2:1.2.0] /home/ronaldorivero/.gradle/caches/9.0-milestone-1/transforms/2c0fa18e0f12aee7e66645bc04a036f4/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
 125            android:authorities="com.noveasmibeta.androidx-startup"
-125-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\2c0fa18e0f12aee7e66645bc04a036f4\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+125-->[androidx.emoji2:emoji2:1.2.0] /home/ronaldorivero/.gradle/caches/9.0-milestone-1/transforms/2c0fa18e0f12aee7e66645bc04a036f4/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
 126            android:exported="false" >
-126-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\2c0fa18e0f12aee7e66645bc04a036f4\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+126-->[androidx.emoji2:emoji2:1.2.0] /home/ronaldorivero/.gradle/caches/9.0-milestone-1/transforms/2c0fa18e0f12aee7e66645bc04a036f4/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
 127            <meta-data
-127-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\2c0fa18e0f12aee7e66645bc04a036f4\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+127-->[androidx.emoji2:emoji2:1.2.0] /home/ronaldorivero/.gradle/caches/9.0-milestone-1/transforms/2c0fa18e0f12aee7e66645bc04a036f4/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
 128                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-128-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\2c0fa18e0f12aee7e66645bc04a036f4\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+128-->[androidx.emoji2:emoji2:1.2.0] /home/ronaldorivero/.gradle/caches/9.0-milestone-1/transforms/2c0fa18e0f12aee7e66645bc04a036f4/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
 129                android:value="androidx.startup" />
-129-->[androidx.emoji2:emoji2:1.2.0] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\2c0fa18e0f12aee7e66645bc04a036f4\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+129-->[androidx.emoji2:emoji2:1.2.0] /home/ronaldorivero/.gradle/caches/9.0-milestone-1/transforms/2c0fa18e0f12aee7e66645bc04a036f4/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
 130            <meta-data
-130-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\5ca06f93251481ff71d150817393ff91\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+130-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/ronaldorivero/.gradle/caches/9.0-milestone-1/transforms/5ca06f93251481ff71d150817393ff91/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
 131                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-131-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\5ca06f93251481ff71d150817393ff91\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+131-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/ronaldorivero/.gradle/caches/9.0-milestone-1/transforms/5ca06f93251481ff71d150817393ff91/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
 132                android:value="androidx.startup" />
-132-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\PC\.gradle\caches\9.0-milestone-1\transforms\5ca06f93251481ff71d150817393ff91\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+132-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/ronaldorivero/.gradle/caches/9.0-milestone-1/transforms/5ca06f93251481ff71d150817393ff91/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
 133        </provider>
 134    </application>
 135

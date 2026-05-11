@@ -4,7 +4,7 @@
             "outputFile": "com.noveasmibeta.app-mergeDebugResources-21:/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\PC\\.gradle\\caches\\9.0-milestone-1\\transforms\\08f48d36a93b482a6a962d6e31da18f2\\transformed\\appcompat-1.6.1\\res\\values-v24\\values-v24.xml",
+                    "source": "/home/ronaldorivero/.gradle/caches/9.0-milestone-1/transforms/08f48d36a93b482a6a962d6e31da18f2/transformed/appcompat-1.6.1/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

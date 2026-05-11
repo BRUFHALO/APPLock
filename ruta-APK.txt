@@ -1,2 +1,2 @@
-C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta\app\build\outputs\apk\debug\
+@/home/ronaldorivero/Documentos/Ronaldo Windows/Proyectos/Applock/NoVeasMiBeta/app/build/outputs/apk/debug/app-debug.apk
 comando para complilar APK: .\gradlew assembleDebug

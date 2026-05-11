@@ -131,7 +131,11 @@ Genera imágenes de pago móvil para compartir:
 
 ---
 
-## ⚙️ Cómo compilar
+## ⚙️ Cómo compilar (Linux)
+
+### Requisitos previos
+- **Android Studio** instalado (incluye el JDK necesario)
+- Android SDK en `~/Android/Sdk`
 
 ### Opción 1: Android Studio (Recomendado)
 1. Abre Android Studio
@@ -142,8 +146,15 @@ Genera imágenes de pago móvil para compartir:
 
 ### Opción 2: Línea de comandos
 ```bash
-cd NoVeasMiBeta
-.\gradlew assembleDebug
+# 1. Asegúrate de que local.properties tenga la ruta correcta del SDK
+echo "sdk.dir=$HOME/Android/Sdk" > local.properties
+
+# 2. Usa el JDK bundled de Android Studio para compilar
+export JAVA_HOME=~/android-studio/jbr
+
+# 3. Compila
+chmod +x gradlew
+./gradlew assembleDebug
 ```
 
 El APK estará en: `app/build/outputs/apk/debug/app-debug.apk`

@@ -703,9 +703,24 @@ public class CalculatorActivity extends Activity {
     }
 
     private double parseFormattedNumber(String formatted) {
-        // Quitar puntos de miles y reemplazar coma decimal por punto
-        String normalized = formatted.replace(".", "").replace(",", ".");
-        return Double.parseDouble(normalized);
+        if (formatted.contains(",")) {
+            // Tiene coma decimal: los puntos son separadores de miles
+            String normalized = formatted.replace(".", "").replace(",", ".");
+            return Double.parseDouble(normalized);
+        } else if (formatted.contains(".")) {
+            // Sin coma: verificar si el punto es separador de miles o decimal
+            // Separador de miles: dígitos seguidos de grupos .XXX (exactamente 3 dígitos)
+            if (formatted.matches("\\d{1,3}(\\.\\d{3})+")) {
+                // Punto es separador de miles (ej: 1.500, 10.000)
+                String normalized = formatted.replace(".", "");
+                return Double.parseDouble(normalized);
+            } else {
+                // Punto es separador decimal (ej: 1.5, 1.50, 25.99)
+                return Double.parseDouble(formatted);
+            }
+        } else {
+            return Double.parseDouble(formatted);
+        }
     }
 
     private void copyToClipboard(String value, String label) {

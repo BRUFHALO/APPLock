@@ -1,80 +1,95 @@
-# 🚀 Instrucciones para Compilar "No Veas Mi Beta"
+# 🚀 Instrucciones para Compilar "No Veas Mi Beta" (Linux)
 
-## ⚠️ IMPORTANTE
-Para compilar esta app necesitas **Android Studio** instalado.
+## ✅ Requisitos
 
-## 📋 Pasos para Compilar:
+- **Android Studio** instalado en `~/android-studio`
+- **Android SDK** en `~/Android/Sdk`
+- El JDK necesario ya viene **bundled con Android Studio** (`~/android-studio/jbr`) — no se necesita instalar JDK por separado
 
-### Opción 1: Usar Android Studio (RECOMENDADO)
+---
 
-1. **Abre Android Studio**
+## 📋 Opción 1: Línea de Comandos (Recomendado)
 
-2. **Importa el Proyecto:**
-   - File → Open
-   - Navega a: `C:\Users\PC\Documents\Proyectos\Applock\NoVeasMiBeta`
-   - Click en "OK"
+### Paso 1 — Configurar el SDK (solo la primera vez)
 
-3. **Espera la Sincronización:**
-   - Android Studio descargará Gradle automáticamente
-   - Espera 2-3 minutos
+El archivo `local.properties` debe apuntar al SDK de Linux. Ya está configurado, pero si necesitas regenerarlo:
 
-4. **Compila el APK:**
-   - Build → Build Bundle(s) / APK(s) → Build APK(s)
-   - Espera 1-2 minutos
-
-5. **Encuentra el APK:**
-   - El APK estará en: `app\build\outputs\apk\debug\app-debug.apk`
-   - Android Studio mostrará un link para abrir la carpeta
-
-### Opción 2: Instalar Gradle Manualmente
-
-Si no tienes Android Studio, puedes instalar Gradle:
-
-1. Descarga Gradle: https://gradle.org/releases/
-2. Extrae en `C:\Gradle`
-3. Agrega a PATH: `C:\Gradle\bin`
-4. Reinicia PowerShell
-5. Ejecuta: `gradle wrapper`
-6. Luego: `.\gradlew assembleDebug`
-
-## 🎯 Probar en el Emulador
-
-Una vez tengas el APK:
-
-```powershell
-# Instalar en emulador
-adb install app\build\outputs\apk\debug\app-debug.apk
-
-# Iniciar la app
-adb shell am start -n com.noveasmibeta/.MainActivity
+```bash
+echo "sdk.dir=$HOME/Android/Sdk" > local.properties
 ```
 
-## ✅ Verificar que Funciona
+### Paso 2 — Dar permisos al wrapper de Gradle
 
-1. Abre "No Veas Mi Beta" en el emulador
-2. Toca "ACTIVAR PERMISOS"
-3. Activa como Administrador del Dispositivo
-4. Toca "BLOQUEAR PANTALLA"
-5. ¡La pantalla debería bloquearse instantáneamente!
+```bash
+chmod +x gradlew
+```
+
+### Paso 3 — Compilar el APK debug
+
+```bash
+export JAVA_HOME=~/android-studio/jbr
+./gradlew assembleDebug
+```
+
+La primera vez tarda ~2 min (descarga dependencias). Las siguientes veces ~30 seg.
+
+### Paso 4 — Ubicación del APK
+
+```
+app/build/outputs/apk/debug/app-debug.apk
+```
+
+---
+
+## 📋 Opción 2: Android Studio (GUI)
+
+1. Abre Android Studio
+2. **File → Open** → selecciona la carpeta `NoVeasMiBeta`
+3. Espera que Gradle sincronice (~1-2 min)
+4. **Build → Build Bundle(s) / APK(s) → Build APK(s)**
+5. El APK estará en: `app/build/outputs/apk/debug/app-debug.apk`
+6. Android Studio mostrará un enlace directo para abrir la carpeta
+
+---
+
+## 📱 Instalar en dispositivo / emulador
+
+```bash
+# Verificar dispositivos conectados
+~/Android/Sdk/platform-tools/adb devices
+
+# Instalar el APK
+~/Android/Sdk/platform-tools/adb install app/build/outputs/apk/debug/app-debug.apk
+
+# Iniciar la app
+~/Android/Sdk/platform-tools/adb shell am start -n com.noveasmibeta/.MainActivity
+```
+
+---
 
 ## 🔧 Solución de Problemas
 
-**Error: "Gradle not found"**
-- Necesitas Android Studio o instalar Gradle manualmente
+**Error: "Toolchain does not provide JAVA_COMPILER"**
+- El sistema tiene JRE pero no JDK. Solución: usa el JDK de Android Studio:
+  ```bash
+  export JAVA_HOME=~/android-studio/jbr
+  ```
 
-**Error: "SDK not found"**
-- Configura ANDROID_HOME apuntando a tu SDK de Android
+**Error: "SDK not found" / "sdk.dir" incorrecto**
+- Regenera `local.properties`:
+  ```bash
+  echo "sdk.dir=$HOME/Android/Sdk" > local.properties
+  ```
 
 **Error: "Device not found"**
-- Asegúrate de que el emulador esté corriendo
-- Ejecuta: `adb devices` para verificar
+- Verifica que el emulador o dispositivo esté conectado:
+  ```bash
+  ~/Android/Sdk/platform-tools/adb devices
+  ```
 
-## 📞 Necesitas Ayuda?
-
-Si tienes Android Studio instalado, el proceso es muy simple:
-1. Abre el proyecto
-2. Espera la sincronización
-3. Build → Build APK
-4. ¡Listo!
-
-La compilación toma solo 1-2 minutos (mucho más rápido que React Native).
+**Para compilar en background (sin bloquear la terminal)**
+```bash
+nohup bash -c 'export JAVA_HOME=~/android-studio/jbr && ./gradlew assembleDebug' > /tmp/gradle_build.txt 2>&1 &
+# Ver progreso:
+tail -f /tmp/gradle_build.txt
+```

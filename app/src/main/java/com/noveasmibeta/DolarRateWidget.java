@@ -23,7 +23,7 @@ public class DolarRateWidget extends AppWidgetProvider {
         for (int appWidgetId : appWidgetIds) {
             try {
                 setupWidget(context, appWidgetManager, appWidgetId);
-                fetchData(context.getApplicationContext(), appWidgetManager, appWidgetId);
+                fetchData(context.getApplicationContext(), appWidgetManager, appWidgetId, false);
             } catch (Exception e) {
                 android.util.Log.e(TAG, "Error en onUpdate: " + e.getMessage());
             }
@@ -39,7 +39,7 @@ public class DolarRateWidget extends AppWidgetProvider {
                 ComponentName cn = new ComponentName(context, DolarRateWidget.class);
                 int[] ids = mgr.getAppWidgetIds(cn);
                 for (int id : ids) {
-                    fetchData(context.getApplicationContext(), mgr, id);
+                    fetchData(context.getApplicationContext(), mgr, id, true);
                 }
             }
         } catch (Exception e) {
@@ -74,7 +74,7 @@ public class DolarRateWidget extends AppWidgetProvider {
         return views;
     }
 
-    private void fetchData(Context appContext, AppWidgetManager mgr, int widgetId) {
+    private void fetchData(Context appContext, AppWidgetManager mgr, int widgetId, boolean force) {
         try {
             // Mostrar loading
             RemoteViews loading = buildViews(appContext);
@@ -86,11 +86,11 @@ public class DolarRateWidget extends AppWidgetProvider {
 
             // Fetch BCV data
             BcvScraper scraper = new BcvScraper(appContext);
-            scraper.obtenerTasas(new BcvScraper.BcvCallback() {
+            scraper.obtenerTasas(force, new BcvScraper.BcvCallback() {
                 @Override
                 public void onSuccess(BcvScraper.BcvData data) {
                     // After BCV success, fetch Binance
-                    fetchBinanceData(appContext, mgr, widgetId, data.dolar, data.euro, false);
+                    fetchBinanceData(appContext, mgr, widgetId, data.dolar, data.euro, false, force);
                     scraper.destroy();
                 }
 
@@ -99,7 +99,7 @@ public class DolarRateWidget extends AppWidgetProvider {
                     // On BCV error, still try to get Binance data
                     double dolar = (cachedData != null) ? cachedData.dolar : 0;
                     double euro = (cachedData != null) ? cachedData.euro : 0;
-                    fetchBinanceData(appContext, mgr, widgetId, dolar, euro, true);
+                    fetchBinanceData(appContext, mgr, widgetId, dolar, euro, true, force);
                     scraper.destroy();
                 }
             });
@@ -109,10 +109,10 @@ public class DolarRateWidget extends AppWidgetProvider {
     }
 
     private void fetchBinanceData(Context appContext, AppWidgetManager mgr, int widgetId,
-                                   double bcvDolar, double bcvEuro, boolean isCache) {
+                                   double bcvDolar, double bcvEuro, boolean isCache, boolean force) {
         try {
             BinanceScraper binanceScraper = new BinanceScraper(appContext);
-            binanceScraper.fetchUsdtVesPrice(new BinanceScraper.BinanceCallback() {
+            binanceScraper.fetchUsdtVesPrice(force, new BinanceScraper.BinanceCallback() {
                 @Override
                 public void onSuccess(BinanceScraper.BinanceData data) {
                     try {

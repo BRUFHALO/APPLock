@@ -21,6 +21,8 @@ flutter build apk --debug
 - JDK 17 portable en `~/jdk/jdk-17.0.21+9` — **necesario** o Gradle falla con "does not provide the required capabilities: [JAVA_COMPILER]".
 - Android SDK en `~/Android/Sdk`.
 - iOS: scaffold generado (`ios/`), pero compilar requiere Mac/Xcode. Sin widget en iOS.
+- **App Java (`app/`):** wrapper fijado en Gradle 8.7 — AGP 8.2.0 es incompatible con Gradle 9 ("Cannot mutate dependencies after resolved"). Build: `JAVA_HOME=~/jdk/jdk-17.0.21+9 ./gradlew :app:assembleDebug`.
+- uCrop viene de jitpack (repo en `settings.gradle`).
 
 ## Arquitectura Flutter
 

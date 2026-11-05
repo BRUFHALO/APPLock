@@ -4,4 +4,13 @@
         <item name="android:statusBarColor">#1a1a2e</item>
         <item name="android:navigationBarColor">#1a1a2e</item>
     </style>
+
+    <!-- UCropActivity extiende AppCompatActivity: requiere tema AppCompat -->
+    <style name="Theme.NoVeasMiBeta.UCrop" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:statusBarColor">#121226</item>
+        <item name="android:navigationBarColor">#121226</item>
+        <item name="colorPrimary">#31312F</item>
+        <item name="colorPrimaryDark">#121226</item>
+        <item name="colorAccent">#C9A961</item>
+    </style>
 </resources>

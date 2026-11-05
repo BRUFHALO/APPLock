@@ -25,7 +25,7 @@ public class BinanceScraper {
     private static final String TAG = "BinanceScraper";
     private static final String BINANCE_API_URL = "https://p2p.binance.com/bapi/c2c/v2/friendly/c2c/adv/search";
     private static final int TIMEOUT_MS = 15000;
-    private static final long CACHE_DURATION_MS = 8 * 60 * 1000; // 8 minutos
+    private static final long CACHE_DURATION_MS = 10 * 60 * 1000; // 10 minutos
 
     private static final String PREFS_NAME = "BinanceCache";
     private static final String KEY_PRICE = "usdt_price";
@@ -53,9 +53,16 @@ public class BinanceScraper {
     }
 
     public void fetchUsdtVesPrice(BinanceCallback callback) {
-        // Verificar si hay caché válido (menos de 8 minutos)
+        fetchUsdtVesPrice(false, callback);
+    }
+
+    /**
+     * {@code force} = true bypasea el caché de 10 minutos (refresh manual).
+     */
+    public void fetchUsdtVesPrice(boolean force, BinanceCallback callback) {
+        // Verificar si hay caché válido (menos de 10 minutos)
         BinanceData cachedData = getCachedData();
-        if (cachedData != null && !isCacheExpired()) {
+        if (!force && cachedData != null && !isCacheExpired()) {
             Log.d(TAG, "Usando caché de Binance");
             cachedData.isCache = true;
             callback.onSuccess(cachedData);

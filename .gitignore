@@ -1,3 +1,7 @@
 node_modules
 .env
 .expo
+
+# Binarios generados
+*.apk
+*.aab
